@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        /* table {
+            background-color: rgb(226, 43, 43);
+            margin-top: 100px;
+            margin-left: 500px;
+            height: 400px;
+            width: 15px;
+            border-style: solid;
+            border-width: 6px;
+            border-radius: 20px;
+        } */
+
+        .main{
+            background-color: crimson;
+            width: 300px;
+            height: 300px;
+            margin-top: 180px;
+            margin-left: 450px;
+            border-style: solid;
+            border-color: white;
+            border-radius: 35px;
+            outline-style: double;
+        }
+        /* .calcheader{
+            background-color: aqua;
+            width: 330x;
+            height: 100px;
+        } */
+
+        .calcheader td{
+            background-color: aqua;
+            border-style: solid;
+            border-color: white;
+            border-radius: 30px;
+            outline-style: groove;
+            /* width: 200x;
+            height: 100px; */
+        }
+
+        #result {
+            width: 220px;
+            height: 40px;
+            margin: 30px;
+            outline-style: inset;
+            border-style: solid;
+        }
+
+        #col1 {
+            width: 35px;
+            margin-left: 15px;
+        }
+
+        #col2 {
+            width: 35px;
+            margin-right: 20px;
+        }
+
+        #col3 {
+            width: 35px;
+            margin-right: 20px;
+        }
+
+        #col4 {
+            width: 35px;
+            margin-right: 20px;
+        }
+
+        #col5 {
+            width: 35px;
+            margin-right: 20px;
+        }
+
+        input[type="button"]:hover {
+            color: darkgreen;
+        }
+
+        #power {
+            width: 70px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        #eqlbtn {
+            width: 90px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <table>
+                <tr class="calcheader">
+                    <td>
+                        <input type="text" id="result" readonly>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <input type="button" value="ON/OFF" id="power">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="AC" id="col1">
+                    </td>
+                    <td>
+                        <input type="button" value="MR" id="col2">
+                    </td>
+                    <td>
+                        <input type="button" value="M+" id="col3">
+                    </td>
+                    <td>
+                        <input type="button" value="M-" id="col4"> 
+                    </td>
+                    <td>
+                        <input type="button" value="÷" id="col5">
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <input type="button" value="C" id="col1">
+                    </td>
+                    <td>
+                        <input type="button" value="7" id="col2">
+                    </td>
+                    <td>
+                        <input type="button" value="8" id="col3">
+                    </td>
+                    <td>
+                        <input type="button" value="9" id="col4">
+                    </td>
+                    <td>
+                        <input type="button" value="x" id="col5">
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <input type="button" value="%" id="col1">
+                    </td>
+                    <td>
+                        <input type="button" value="4" id="col2">
+                    </td>
+                    <td>
+                        <input type="button" value="5" id="col3">
+                    </td>
+                    <td>
+                        <input type="button" value="6" id="col4">
+                    </td>
+                    <td>
+                        <input type="button" value="-" id="col5">
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <input type="button" value="√" id="col1">
+                    </td>
+                    <td>
+                        <input type="button" value="1" id="col2">
+                    </td>
+                    <td>
+                        <input type="button" value="2" id="col3">
+                    </td>
+                    <td>
+                        <input type="button" value="3" id="col4">
+                    </td>
+                    <td>
+                        <input type="button" value="+" id="col5">
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <input type="button" value="+/-" id="col1">
+                    </td>
+                    <td>
+                        <input type="button" value="0" id="col2">
+                    </td>
+                    <td>
+                        <input type="button" value="." id="col3">
+                    </td>
+                    <td colspan="2">
+                        <input type="button" value="=" id="eqlbtn">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
