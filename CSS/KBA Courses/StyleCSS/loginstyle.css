@@ -1,3 +1,5 @@
+/* Styling for Login Page */
+
 .styleheading{
     color: blueviolet;
     font-size:x-large;
@@ -32,9 +34,10 @@ body{
     background-color:blueviolet;
     height: 30px;
     width: 50px;
+    border-style: hidden;
 }
 
-.container input[type="text"]{
+.txtbox{
     width: 300px;
     margin-top: 10px;
 }
@@ -51,3 +54,16 @@ p{
     margin-left: 30px;
     margin-top: 30px;
 }
+
+
+/* Styling for SignUp Page */
+
+.styletext{
+    margin-top: 20px;
+}
+
+.choices{
+    width: 250px;
+    margin-top: 10px;
+}
+
