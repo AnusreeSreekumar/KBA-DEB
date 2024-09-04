@@ -33,6 +33,7 @@ img{
     height: 550px;
     background-color: rgb(216, 211, 221);
     margin-left: 450px;
+    border-radius: 10px;
 }
 
 h1{
