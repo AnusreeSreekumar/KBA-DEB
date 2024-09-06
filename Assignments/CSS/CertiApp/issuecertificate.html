@@ -5,77 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>issuecertificate</title>
+
+    <link rel="stylesheet" href="certistyle.css">
 </head>
 
-<body bgcolor="#98AFC7">
-    <table border="0" width="100%" height="100">
-        <tr>
-            <td>
-                <h3>Certificate Dapp</h3>
-            </td>
+<body>
 
-            <td align="right" width="1000" height="50">
-                <h6>Home</h6>
-            </td>
-    
-            <td align="right">
-                <button style="background-color: #b9c7c6; width: 150px; height: 40px;">Issue Certificate</button>
-    
-            </td>
-        </tr>
-    </table>
+    <div class="header">
+        <h3>Certificate Dapp</h3>
+        <nav>
+            <ul class="nav1">
+                <li>
+                    <div class="selected ">
+                        <a href="issuecertificate.html"><span>Home</span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="selected color">
+                        <a href="issuecertificate.html">Issue Certificate</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-    <table border="0" bgcolor="#b9c7c6" width="40%" height="150" align="center">
-        <h1 align="center">Issue New Certificate</h1>
-        <tr>
-            <td>
-                <label for="select course">Select Course*</label><br>
-                <select style="width: 420px;">
-                    <option value="Certified Blockchain Associate">Certified Blockchain Associate</option>
-                    <option value="Option2">Option 2</option>
-                    <option value="Option3">Option 3</option>
-                </select>
-                <br><br>
-            </td>
-        </tr>
+    <div class="main">
+        <h1>Issue New Certificate</h1>
 
-        <tr>
-            <td>
-                <label for="Certificate Id">Certificate Id*</label><br>
-                <input type="text" placeholder="Certificate Id" size="50">
-                <br><br>
-            </td>
-        </tr>
+        <div>
+            <label for="select course">Select Course*</label>
+        </div>
+        <select class="optns">
+            <option value="Certified Blockchain Associate">Certified Blockchain Associate</option>
+            <option value="Option2">Option 2</option>
+            <option value="Option3">Option 3</option>
+        </select>
 
-        <tr>
-            <td>
-                <label for="candidateName">Candidate Name*</label><br>
-                <input type="text" placeholder="Name" size="50">
-                <br><br>
-            </td>
-        </tr>
+        <div class="optnstxt"><label for="Certificate Id">Certificate Id*</label></div>
+        <div class="txtbx"><input type="text" placeholder="Certificate Id"></div>
 
-        <tr>
-            <td>
-                <label for="selectgrade">Select Grade*</label><br>
-                <select style="width: 420px;">
-                    <option value="S">S</option>
-                    <option value="Option2">Option 2</option>
-                    <option value="Option3">Option 3</option>
-                </select>
-                <br><br>
-            </td>
-        </tr>
+        <div class="optnstxt"><label for="candidateName">Candidate Name*</label></div>
+        <div class="txtbx"><input type="text" placeholder="Name"></div>
 
-        <tr>
-            <td>
-                <label for="issuedate">Issue Date*</label><br>
-                <input type="date" name="date" style="width: 410px;">
-                <br><br>
-            </td>
-        </tr>
+        <div class="optnstxt"><label for="selectgrade">Select Grade*</label></div>
+        <select class="optns">
+            <option value="S">S</option>
+            <option value="Option2">Option 2</option>
+            <option value="Option3">Option 3</option>
+        </select>
 
-    </table>
+        <div class="optnstxt"><label for="issuedate">Issue Date*</label></div>
+        <div class="txtbx"><input type="date"></div>
+
+        <div class="issue"><input type="submit" value="Issue Certificate"></div>
+
+    </div>
 </body>
 
 </html>
