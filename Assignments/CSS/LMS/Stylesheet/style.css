@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(228, 221, 156)
+    /* background-image: url(/Assignments/CSS/LMS/Images/backgrnd.jpeg);
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.main{
+    display: flex;
+    width:1330px;
+    /* justify-content:flex-end; */
+}
+
+.main img{
+    width: 80px;
+    height: 70px;
+    /* float: left; */
+    position: fixed;
+    margin-left: 10px;
+}
+
+.main h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    color:brown;
+    margin-left: 320px;
+    /* float: left; */
+}
+
+.main a{
+    margin-left: 20px;
+    padding-right: 20px;
+}
+
+img{
+    width: 800px;
+    height: 450px;
+    margin-left: 230px;
+    justify-content: space-between;
+}
+
+.menu{
+    display: flex;
+    margin-left: 180px;
+    margin-top: 20px;
+}
+
+.menu h3{
+    margin-right: 100px;
+}
+
+.menu input[type="button"]{
+    margin-right: 100px;
+    width: 55px;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: aqua;
+}
