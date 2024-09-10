@@ -5,81 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>newuser</title>
+
+    <link rel="stylesheet" href="Stylesheet/style.css">
 </head>
 
-<body bgcolor="#ada5bd">
-    <h1 align="center">
-        <font color="#09733f">New User details</font>
-    </h1>
+<body class="regnpg">
+    <h1>New User details</h1>
+    <form method="regtnpg.html">
+        <div class="container">
+            <div class="optns">
+                <label for="name">Name*: </label>
+                <input type="text" required>
+            </div>
+            <div class="optns">
+                <label for="username">Username*: </label>
+                <input type="text" required>
+            </div>
+            <div class="optns">
+                <label for="email">Email*: </label>
+                <input type="text" required>
+            </div>
+            <div class="optns">
+                <label for="password">Password*: </label>
+                <input type="text" equired>
+            </div>
+            <div class="optns">
+                <label for="confirmpswd">Confirm Password*: </label>
+                <input type="text" required>
+            </div>
+            <div class="optns">
+                <label for="languages">Languages looking for: </label>
+                <input type="checkbox" name="english">English
+                <input type="checkbox" name="malayalam">Malayalam
+                <!-- <input type="checkbox" name="tamil">Tamil -->
+                <!-- <input type="checkbox" name="hindi">Hindi -->
+            </div>
 
-    <form action="regtnpg.html">
-        <table border="0" width="1000" height="500" align="center" bgcolor="#d7dbdd">
-            <tr>
-                <td align="center">
-                    <label for="name">Name*: </label>
-                    <input type="text" placeholder="Enter your name" required>
-                </td>
-            </tr>
-
-            <tr>
-                <td align="center">
-                    <label for="username">Username*: </label>
-                    <input type="text" placeholder="Enter your username" required>
-                </td>
-            </tr>
-
-            <tr>
-                <td align="center">
-                    <label for="email">Email*: </label>
-                    <input type="text" placeholder="Enter your email id" required>
-                </td>
-            </tr>
-
-            <tr>
-                <td align="center">
-                    <label for="password">Password*: </label>
-                    <input type="text" placeholder="Please enter password" required>
-                </td>
-            </tr>
-
-            <tr>
-                <td align="center">
-                    <label for="confirmpswd">Confirm Password*: </label>
-                    <input type="text" placeholder="Please re-enter password" required>
-                </td>
-            </tr>
-
-            <!-- <tr>
-                <td align="center">
-                    <label for="looking">Looking for: </label>
-                    <input type="checkbox" name="reading">Reading Only
-                    <input type="checkbox" name="writing">Writing Only
-                    <input type="checkbox" name="read&write">Reading & Writing
-                </td>
-            </tr> -->
-
-
-            <tr>
-                <td align="center">
-                    <label for="languages">Languages: </label>
-                    <input type="checkbox" name="english">English
-                    <input type="checkbox" name="malayalam">Malayalam
-                    <input type="checkbox" name="tamil">Tamil
-                    <input type="checkbox" name="hindi">Hindi
-                    <input type="checkbox" name="kannada">Kannada
-                    <input type="checkbox" name="Telugu">Telugu
-                </td>
-            </tr>
-        </table>
-
-        <table border="0" width="1050" height="100" align="center">
-            <tr>
-                <td align="center">
-                    <input type="submit" value="Submit">
-
-                </td>
-            </tr>
-        </table>
+            <input type="submit" value="Submit">
+        </div>
     </form>
 
 </body>
