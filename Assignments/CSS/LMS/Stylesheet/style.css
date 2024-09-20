@@ -27,6 +27,7 @@ body{
 .main a{
     margin-left: 20px;
     padding-right: 20px;
+    justify-items: end;
 }
 
 img{

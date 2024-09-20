@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-Task1</title>
+</head>
+<body>
+   <script>
+        //Arithmetic Operations
+        console.log("sum of 2+5 is:")
+        document.write("sum of 2+5 is:","<br>")
+        console.log(2+5)
+        document.write(2+5,"<br>")
+        document.write("product of 5*10 is:","<br>")
+        document.write(5*10, "<br>")
+        document.write("BODMAS (26*3)+4:","<br>")
+        document.write((26*3)+4, "<br>")
+        document.write("Divide 56/5:","<br>")
+        document.write(56/5, "<br>")
+
+        //Print Pattern 1
+        document.write("<br><br>")
+        document.write("*","<br>")
+        document.write("*\t*","<br>")
+        document.write("*\t*\t*","<br>")
+
+        //Print Pattern 2
+        document.write("<br><br>")
+        document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\t\t*", "<br>");
+        document.write("&nbsp;&nbsp;&nbsp;\t*\t*", "<br>");
+        document.write("&nbsp;*\t*\t*", "<br>");
+        
+        //Print Program 1
+        document.write("<br><br>")
+        document.write("1 <br>")
+        document.write("12 <br>")
+        document.write("123 <br>")
+
+        //Print Program 2
+        document.write("<br><br>")
+        document.write("1 <br>")
+        document.write("23 <br>")
+        document.write("456 <br>")
+   </script> 
+
+   <!--Program-->
+
+   <p>Ans for (5*6)%4 is:</p>
+   <p id="oprtn1">(5*6)%4</p>
+   <p>Ans for 3.5+2.4 is:</p>
+   <p id="oprtn2">3.5+2.4</p>
+   <p>Ans for 104.5/5 is:</p>
+   <p id="oprtn3">104.5/5</p>
+   <p>Ans for 4.5*2 is:</p>
+   <p id="oprtn4">4.5*2</p>
+   
+   <script>
+      //output using document.write()
+      document.write("<br><br>")
+      a=3+4-1
+      document.write("Ans for 3+4-1: is\t",`${a}`,"<br><br>")
+      b=(3*5)+1
+      document.write("Ans for (3*5)+1: is\t",`${b}`,"<br><br>")
+      c=(5*2)/2
+      document.write("Ans for (5*2)/2: is\t",`${c}`,"<br><br>")
+      d=4.5*2
+      document.write("Ans for 4.5*2: is\t",`${d}`,"<br><br>")
+
+      //output using console:
+      console.log("Ans for 10*2+3-1 is\t",10*2+3-1)
+      console.log("Ans for 10%2 is\t",10%2)
+      console.log("Ans for 17%2 is\t",17%2)
+      console.log("Ans for 4.5*2 is\t",4.5*2)
+
+      //output using document.getElement
+      document.getElementById("oprtn1").innerHTML=(5*6)%4
+      document.getElementById("oprtn2").innerHTML=3.5+2.4
+      document.getElementById("oprtn3").innerHTML=104.5/5
+      document.getElementById("oprtn4").innerHTML=4.5*2
+      
+   </script>
+</body>
+</html>
