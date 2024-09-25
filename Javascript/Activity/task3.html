@@ -102,29 +102,38 @@
     <div id="exp">
         <h3>On the KBA site you created add a radio button showing your experience on KBA(like good, bad, average)</h3>
     </div>
+    <!-- <label for="good">Good</label> -->
     <script>
         {   
-            let optn1 = document.createTextNode("Good");
             let element = document.createElement("input");
             element.type = "radio";
-            element.value = "good";
+            element.name = "feedback"
+            element.id = "feedback";
             document.getElementById("exp").appendChild(element);
-            document.getElementById("exp").appendChild(optn1);
 
-            let optn2 = document.createTextNode("Bad");
+            let radio1 = document.createElement("label")
+            radio1.textContent = "Good"
+            document.getElementById("exp").appendChild(radio1) 
+
             let element1 = document.createElement("input");
             element1.type = "radio";
-            element1.value = "bad";
+            element1.name = "feedback"
+            element1.id = "feedback";
             document.getElementById("exp").appendChild(element1);
-            document.getElementById("exp").appendChild(optn2);
 
-            let optn3 = document.createTextNode("Average");
+            let radio2 = document.createElement("label")
+            radio2.textContent = "Bad" 
+            document.getElementById("exp").appendChild(radio2)
+            
             let element2 = document.createElement("input");
             element2.type = "radio";
-            element2.value = "avg";
+            element2.name = "feedback"
+            element2.id = "feedback";
             document.getElementById("exp").appendChild(element2);
-            document.getElementById("exp").appendChild(optn3);
 
+            let radio3 = document.createElement("label")
+            radio3.textContent = "Average" 
+            document.getElementById("exp").appendChild(radio3);   
         }
     </script>
 
@@ -154,6 +163,39 @@
 
         document.write("<br><br> Second option is: ", option2.value)
     </script>
-</body >
 
-</html >
+    <div id="myname">
+        <h3>Print your full name storing fname & lname. Print in Uppercase</h3>
+    </div>
+    <script>
+        let fname = "Anusree";
+        let lname = "Sreekumar";
+        let name = fname + ' ' + lname;
+        document.write("<br> Full Name :", name.toUpperCase());
+    </script>
+
+    <div>
+        <h3>Take the substrings “You can study”, “you”,”will”,”do it” and combine as a sentence</h3>
+
+        <script>
+            const str = "You can study anything if you have a will to do it";
+            const str1 = str.substring(0,13) 
+            document.write(str1)
+            
+            let str2 = str.substr(26,3)
+            document.write("<br>", str2)
+
+            let str3 = str.substr(36,5)
+            document.write("<br>", str3)
+
+            let str4 = str.substr(44,6)
+            document.write("<br>", str4)
+
+            document.write("<br>Combined statement is: ", str1+"."+"&nbsp"+str2+"\t"+str3+"\t"+str4)
+        </script>
+
+    </div>
+
+</body>
+
+</html>
