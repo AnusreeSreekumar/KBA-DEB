@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong number</title>
+</head>
+<body>
+    
+    <h3>Program to check whether a number is armstrong or not</h3>
+
+    <script>
+
+        let num = 92727;
+        let numofdigits = num.toString().length;
+        let numpower = 0; sum = 0;
+        let tempnum = num;
+
+        document.write("Entered number is: ", num)
+
+        for(let i = 1; i <= numofdigits; i++){
+            let n = num % 10;
+            numpower = Math.pow(n,numofdigits);
+
+            sum = sum + numpower;
+            num = Math.floor(num / 10);
+        }
+
+        document.write("<br><br> Sum is: ", sum)
+
+        if(sum == tempnum){
+            document.write("<br><br> The number is an Armstrong number")
+        }
+
+        else{
+            document.write("<br><br> The number is  not an Armstrong number")
+        }
+
+    </script>
+</body>
+</html>
