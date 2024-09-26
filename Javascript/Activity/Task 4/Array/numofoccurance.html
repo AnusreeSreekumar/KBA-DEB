@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number of occurance in the Array</title>
+</head>
+<body>
+    
+    <h3>Program to find the occurance</h3>
+
+    <script>
+
+        let a = [1,6,7,8,2,3,4,2,9,2,2];
+        let count = 0; chkval = 2;
+
+        document.write("Entered array is:\t\t", a)
+
+        for(i = 0; i < a.length; i++){
+
+            if(a[i] == chkval){
+
+                count = count + 1;
+            }
+        }
+
+        document.write("<br><br> There are "+count+"\toccurances of\t"+ chkval+"\tin the array")
+    </script>
+</body>
+</html>
