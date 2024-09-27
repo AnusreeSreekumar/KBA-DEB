@@ -12,7 +12,7 @@
 
 <body class="p-0 m-0 bg-amber-50">
     <div class="flex justify-between p-4 bg-white shadow-md shadow-stone-600">
-        <div class="w-9 h-11"><img src="/CSS/KBA Courses/Images/kbalogo.png"></div>
+        <div class="w-9 h-11"><img src="/CSS/Activity/KBA Courses/Images/kbalogo.png"></div>
         <ul class="flex flex-row">
             <li class="mr-2"><a href="home.html" class="text-fuchsia-800 hover:font-bold hover:text-lg">Home</a>
             </li>
@@ -29,7 +29,7 @@
     </div>
 
     <p class="mb-8">All Courses</p>
-    <div class="mt-16 border bg-white w-96 h-96 p-8 rounded-md shadow-lg ml-4">
+    <div class="mt-16 border bg-white w-96 p-8 rounded-md shadow-lg ml-4">
         <img src="Images/Blkchain1.jpeg" class="w-26">
         <a href="learnmore.html" class="block text-purple-900 my-10">More</a>
         <button type="submit"
@@ -37,7 +37,48 @@
             onclick="window.location.href='learnmore.html'">
             Learn More
         </button>
+
+        <div id="exp" class="mt-8 ml-4 text-center"></div>
+        </div>
     </div>
+
+    <script>
+        {
+            let text1 = document.createElement("p")
+            text1.textContent = "Do share your thoughts on our course"
+            document.getElementById("exp").appendChild(text1)
+
+            let element = document.createElement("input");
+            element.type = "radio";
+            element.name = "feedback"
+            element.id = "feedback";
+            document.getElementById("exp").appendChild(element);
+
+            let radio1 = document.createElement("label")
+            radio1.textContent = "Good\t"
+            document.getElementById("exp").appendChild(radio1)
+
+            let element1 = document.createElement("input");
+            element1.type = "radio";
+            element1.name = "feedback"
+            element1.id = "feedback";
+            document.getElementById("exp").appendChild(element1);
+
+            let radio2 = document.createElement("label")
+            radio2.textContent = "Bad\t"
+            document.getElementById("exp").appendChild(radio2)
+
+            let element2 = document.createElement("input");
+            element2.type = "radio";
+            element2.name = "feedback"
+            element2.id = "feedback";
+            document.getElementById("exp").appendChild(element2);
+
+            let radio3 = document.createElement("label")
+            radio3.textContent = "Average"
+            document.getElementById("exp").appendChild(radio3);
+        }
+    </script>
 </body>
 
 </html>
