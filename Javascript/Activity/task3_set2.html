@@ -171,7 +171,7 @@
 
         <script>
 
-            let a = 1; b = -3; c = 2;
+            let a = 2; b = 3; c = 1;
 
             //To find root of a quadractc eqn we need to find discriminant first
             //based on the sign of the value, we determine how many roots are present.
@@ -186,27 +186,28 @@
             //We identify the number of roots based on the sign of the value of descrim 
             //Formula to find root => 'x = ((-b) +/- sqrt(descrim)) / 2a'
 
-            let descrim1 = (descrim < 0) ? document.write("<br><br> The equation has two complex roots") :
-                (descrim = 0) ? document.write("<br><br> The equation has exactly one real root") : document.write("<br><br> The equation has two distinct real roots")
+            // let descrim1 = (descrim < 0) ? document.write("<br><br> The equation has two complex roots") :
+            //     (descrim = 0) ? document.write("<br><br> The equation has exactly one real root") : document.write("<br><br> The equation has two distinct real roots")
 
             //Since we got Complex roots and Math.sqrt returns 'NaN' in the formula we need to add an extra '-ve' sign to make descrim '+ve'
             //To make it work for all descrim values we are doing a condn check.
 
-            if (descrim < 0) {
+            if (descrim > 0) {
 
-                let root1 = ((-b) + Math.sqrt(-descrim)) / (2 * a)
+                let root1 = (-b + Math.sqrt(descrim)) / (2 * a)
                 document.write("<br><br> First root is\t", root1)
 
-                let root2 = ((-b) - Math.sqrt(-descrim)) / (2 * a)
+                let root2 = (-b - Math.sqrt(descrim)) / (2 * a)
                 document.write("<br><br> Second root is\t", root2)
             }
-            else {
+            else if(descrim == 0){
 
-                let root1 = ((-b) + Math.sqrt(descrim)) / (2 * a)
+                let root1 = (-b + Math.sqrt(descrim)) / (2 * a)
                 document.write("<br><br> First root is\t", root1)
 
-                let root2 = ((-b) - Math.sqrt(descrim)) / (2 * a)
-                document.write("<br><br> Second root is\t", root2)
+            }
+            else{
+                document.write("<br><br> The roots are imaginary")
             }
 
         </script>
