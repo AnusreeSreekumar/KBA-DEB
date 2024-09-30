@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+
+    <h3>Create an object and print details</h3>
+
+    <script>
+
+        let car = {
+            make: 'Ford',
+            model: 'Fiesta',
+            year: 2010,
+            age: function () {
+
+                let curnt_yr = 2024;
+                let age_of_car = curnt_yr - this.year
+                document.write(`The car is ${age_of_car} years old`)
+            }
+        }
+
+        car.age();
+
+    </script>
+
+</body>
+
+</html>

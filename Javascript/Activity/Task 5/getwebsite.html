@@ -12,8 +12,9 @@
     <script>
 
         let url1 = "https://tailwindcss.com/"
-
-        let a = url1.slice(8,16)
+        
+        let urlobject = new URL(url1)
+        let a = urlobject.hostname
         document.write(a)
        
     </script>

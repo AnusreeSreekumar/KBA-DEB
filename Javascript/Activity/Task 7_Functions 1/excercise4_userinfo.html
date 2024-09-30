@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>User Info</h3>
+    <label for="dataInput">Enter Username</label>
+    <input type="text" name="username" id="dataInput">
+    <button onclick="userInfo()">Login</button>
+
+    <p id="ouputmsg"></p>
+    <p id="ouputmsg2"></p>
+    
+    <script>
+
+        function userInfo(){
+
+            let username = document.getElementById('dataInput').value;
+            document.getElementById('ouputmsg').textContent = 'Hello,'+ username;
+            
+            function displayMessage(){
+                document.getElementById('ouputmsg2').textContent = `User ${username} has logged in`;
+            }
+            displayMessage();
+        }
+    </script>
+</body>
+</html>
