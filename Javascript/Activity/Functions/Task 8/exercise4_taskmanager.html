@@ -41,8 +41,15 @@
                 li.replaceWith(editedText)
                 let saveButton = document.createElement('button');
                 saveButton.textContent = 'Save';
-                li.appendChild(saveButton);
-                // saveButton.onclick = li.textContent;
+                tasklist.appendChild(saveButton);
+                saveButton.onclick = function(){
+
+                    li.textContent = editedText.value;
+                    tasklist.appendChild(li);
+                    // tasklist.appendChild(removeButton);
+                    // removeButton.onclick();
+                }
+                // ;
             }
             li.appendChild(removeButton);
             li.appendChild(editButton);
