@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating control of 'this' keyword</title>
+
+    <!-- to manipulate the scope of 'this' keyword we uses 3 methods:
+    call, apply, bind -->
+
+</head>
+<body>
+    
+    <h1>Call method in functions</h1>
+    <p>check the console for output</p>
+
+    <script>
+        //Using CALL  method:
+
+        // function greet(greeting, greeting1){
+        //     console.log(greeting, greeting1 + ','+this.name);
+        // }
+
+        // let person = {
+        //     name: 'Bob',
+        //     age: 20
+        // }
+        //            //this argument     
+        // greet.call(person, 'Hello', 'Hi')
+
+        //using APPLY method:
+
+        const person = {
+            fullname: function(city,country){
+                console.log (this.firstname +' ' + this.lastname +' ' + city + ' '+ country )
+            }
+        }
+
+        const person1 ={
+            firstname: 'John',
+            lastname: 'Wick'
+        }
+
+        const person2 ={
+            firstname: 'Alice',
+            lastname: 'Smith'
+        }
+
+        const person3 = {
+            firstname: 'Jason',
+            lastname: 'George'
+        }
+
+        //using Bind method
+
+        const boundFunction = person.fullname.bind(person3, 'Kingston', 'Jamaica')
+
+        person.fullname.call(person1, 'NewYork','USA');
+        person.fullname.apply(person2, ['London','UK']);
+        boundFunction();
+    </script>
+
+</body>
+</html>

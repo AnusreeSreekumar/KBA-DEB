@@ -22,21 +22,30 @@
 
     <script>
         function performCalculation() {
-            const num1 = Number(document.getElementById('dataInput').value);
+            let sum = 0
+            const num1 = parseFloat(document.getElementById('dataInput').value);
             // document.write("<br> first number",num1)
-            const num2 = Number(document.getElementById('dataInput2').value);
-            // document.write("<br> second number",num2)
-
+            const num2 = parseFloat(document.getElementById('dataInput2').value);
+            console.log(typeof num2)
             if(isNaN(num1) || isNaN(num2)){
                 document.write("<br><br> Please enter a valid number")
                 return;
             }
             else{
-                const sum = num1 + num2;
+                sum = num1 + num2;
             }
 
             const messageElement = document.getElementById('outputMessage');
             messageElement.textContent = `Sum of 2 nos is ${sum}`
+
+            document.write("<br><br> Sum is:\t", sum)
+
+            if(sum%2 == 0){
+                document.write("<br><br>Sum is an even number")
+            }
+            else{
+                document.write("<br><br> Sum is an odd number")
+            }
         }
 
     </script>
