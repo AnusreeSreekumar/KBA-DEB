@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager with 'Edit' and 'Save'</title>
+</head>
+<body>
+    
+    <h3>Create a simple task manager to remove, edit and save tasks in the list</h3>
+    <label for="task">Enter the tasks</label>
+    <input type="text" id="task">
+    <button onclick="addTask()">Submit</button>
+    <ul id="displayList"></ul>
+
+    <script>
+
+        function addTask(){
+
+            let tasklist = document.getElementById('displayList');
+            let tasks = document.getElementById('task');
+
+            let li = document.createElement('li');
+            li.textContent = tasks.value;
+
+            let removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove'
+            removeButton.onclick = function(){
+
+                tasklist.removeChild(li);
+            }
+
+            let editedText = document.createElement('input');
+            editedText.type = 'text';
+            editedText.textContent = li.textContent;
+
+            let editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+            editButton.onclick = function(){
+
+                li.replaceWith(editedText)
+                let saveButton = document.createElement('button');
+                saveButton.textContent = 'Save';
+                li.appendChild(saveButton);
+                // saveButton.onclick = li.textContent;
+            }
+            li.appendChild(removeButton);
+            li.appendChild(editButton);
+            // 
+            tasklist.appendChild(li);
+            // tasklist.appendChild(editButton);
+            taskInput.value =' ';
+        }
+    </script>
+</body>
+</html>
