@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher-order Functions</title>
+</head>
+<body>
+   
+    <h1>Higher Order Fucntions</h1>
+    <p>Check the console for output</p>
+
+    <script>
+
+        let numbers = [1,2,3,4,5];
+
+        let doubled = numbers.map(n=>n*2);
+        console.log (doubled);
+        document.write("Doubled values:\t"+'['+doubled+']');
+
+        let even = numbers.filter(n=>n%2===0);
+        console.log ('Even numbers:\t',even);
+        document.write("<br><br>Even numbers are:\t"+'['+even+']');
+
+        let sum = numbers.reduce((total,n) => total+n,0);
+        console.log('Sum of the numbers are:\t'+sum);
+        document.write("<br><br>Sum of the numbers are:\t"+sum);
+
+        let array = new Array(5).fill(0); //dynamic initialization of array
+        console.log ('Initialized array is:\t', array);
+
+        //to fill valid values in above zero initialized array:
+        for(i=0; i<array.length; i++){
+
+            array[i] = i+1;
+        }
+        console.log('Modified array is:\t', array);
+
+        let arraydoubled = array.map(n=> n*2);
+        console.log("Doubled array values are:\t",arraydoubled)
+
+    </script>
+</body>
+</html>

@@ -168,8 +168,10 @@
 
             let stmt2 = "MongoDB is a decentralised distributed ledger . MongoDB can eliminate centralisation";
 
+            document.write("Input String:\t", stmt2)
+
             let replaced_stmt2 = stmt2.replaceAll('MongoDB','Blockchain');
-            document.write("Replaced statement: \t",replaced_stmt2)
+            document.write("<br><br>Replaced statement: \t",replaced_stmt2)
         </script>
     </div>
 
@@ -186,7 +188,9 @@
             document.write("<br>String 2:\t", b)
 
             c = a.localeCompare(b)
+            rslt_typ = typeof(c)
             document.write("<br> Result after comparing of a & b:\t", c)
+            document.write("<br> Type:\t",rslt_typ)
         </script>
     </div>
 
