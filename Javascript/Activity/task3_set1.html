@@ -74,69 +74,97 @@
     <div id="books">
         <h3>A dropdown containing name of books on the book shop page after List of Book heading</h3>
         <h2>List of Books</h2>
+
+        <script>
+
+            let booklist = document.createElement("select");
+
+            let item1 = document.createElement("option")
+            item1.innerHTML = "The NoteBook";
+            booklist.appendChild(item1)
+
+            let item2 = document.createElement("option")
+            item2.innerHTML = "Chemmeen";
+            booklist.appendChild(item2)
+
+            let item3 = document.createElement("option")
+            item3.innerHTML = "Sandition";
+            booklist.appendChild(item3)
+
+            let item4 = document.createElement("option")
+            item4.innerHTML = "Indulekha";
+            booklist.appendChild(item4)
+
+            document.getElementById("books").appendChild(booklist);
+
+        </script>
     </div>
-
-    <script>
-        let booklist = document.createElement("ul");
-
-        let item1 = document.createElement("li");
-        item1.innerHTML = "The NoteBook";
-        booklist.appendChild(item1);
-
-        let item2 = document.createElement("li");
-        item2.innerHTML = "Chemmeen";
-        booklist.appendChild(item2);
-
-        let item3 = document.createElement("li");
-        item3.innerHTML = "Sandition";
-        booklist.appendChild(item3);
-
-        let item4 = document.createElement("li");
-        item4.innerHTML = "Indulekha";
-        booklist.appendChild(item4);
-
-        document.getElementById("books").appendChild(booklist);
-
-    </script>
-
 
     <div id="exp">
         <h3>On the KBA site you created add a radio button showing your experience on KBA(like good, bad, average)</h3>
+
+        <!-- <label for="good">Good</label> -->
+        <script>
+            {
+                let element = document.createElement("input");
+                element.type = "radio";
+                element.name = "feedback"
+                element.id = "feedback";
+                document.getElementById("exp").appendChild(element);
+
+                let radio1 = document.createElement("label")
+                radio1.textContent = "Good"
+                document.getElementById("exp").appendChild(radio1)
+
+                let element1 = document.createElement("input");
+                element1.type = "radio";
+                element1.name = "feedback"
+                element1.id = "feedback";
+                document.getElementById("exp").appendChild(element1);
+
+                let radio2 = document.createElement("label")
+                radio2.textContent = "Bad"
+                document.getElementById("exp").appendChild(radio2)
+
+                let element2 = document.createElement("input");
+                element2.type = "radio";
+                element2.name = "feedback"
+                element2.id = "feedback";
+                document.getElementById("exp").appendChild(element2);
+
+                let radio3 = document.createElement("label")
+                radio3.textContent = "Average"
+                document.getElementById("exp").appendChild(radio3);
+            }
+        </script>
     </div>
-    <!-- <label for="good">Good</label> -->
-    <script>
-        {
-            let element = document.createElement("input");
-            element.type = "radio";
-            element.name = "feedback"
-            element.id = "feedback";
-            document.getElementById("exp").appendChild(element);
 
-            let radio1 = document.createElement("label")
-            radio1.textContent = "Good"
-            document.getElementById("exp").appendChild(radio1)
+    <div id="cakesdrpdwn">
+        <h3>Create a dropdown for list of cakes and print the value of second option</h3>
 
-            let element1 = document.createElement("input");
-            element1.type = "radio";
-            element1.name = "feedback"
-            element1.id = "feedback";
-            document.getElementById("exp").appendChild(element1);
+        <script>
 
-            let radio2 = document.createElement("label")
-            radio2.textContent = "Bad"
-            document.getElementById("exp").appendChild(radio2)
+            let cakeInput = document.createElement("select");
 
-            let element2 = document.createElement("input");
-            element2.type = "radio";
-            element2.name = "feedback"
-            element2.id = "feedback";
-            document.getElementById("exp").appendChild(element2);
+            let cake1 = document.createElement("option");
+            cake1.innerHTML = "Vancho";
+            cakeInput.appendChild(cake1);
 
-            let radio3 = document.createElement("label")
-            radio3.textContent = "Average"
-            document.getElementById("exp").appendChild(radio3);
-        }
-    </script>
+            let cake2 = document.createElement("option");
+            cake2.innerHTML = "Irish Coffee";
+            cakeInput.appendChild(cake2);
+
+            let cake3 = document.createElement("option");
+            cake3.innerHTML = "Blackforest";
+            cakeInput.appendChild(cake3);
+
+            let cake4 = document.createElement("option");
+            cake4.innerHTML = "Vanilla";
+            cakeInput.appendChild(cake4);
+
+            document.getElementById("cakesdrpdwn").appendChild(cakeInput)
+        </script>
+    </div>
 
     <div>
         <h3>Take the substrings “You can study”, “you”,”will”,”do it” and combine as a sentence</h3>
@@ -170,8 +198,8 @@
 
             document.write("Input String:\t", stmt2)
 
-            let replaced_stmt2 = stmt2.replaceAll('MongoDB','Blockchain');
-            document.write("<br><br>Replaced statement: \t",replaced_stmt2)
+            let replaced_stmt2 = stmt2.replaceAll('MongoDB', 'Blockchain');
+            document.write("<br><br>Replaced statement: \t", replaced_stmt2)
         </script>
     </div>
 
@@ -188,9 +216,9 @@
             document.write("<br>String 2:\t", b)
 
             c = a.localeCompare(b)
-            rslt_typ = typeof(c)
+            rslt_typ = typeof (c)
             document.write("<br> Result after comparing of a & b:\t", c)
-            document.write("<br> Type:\t",rslt_typ)
+            document.write("<br> Type:\t", rslt_typ)
         </script>
     </div>
 
@@ -275,7 +303,7 @@
 
             document.write("Sum is:\t", sum)
             let chk = (sum > 50) && (sum < 80) ? 65 : 80;
-            document.write("<br>",chk)
+            document.write("<br>", chk)
         </script>
 
     </div>
@@ -291,7 +319,7 @@
             document.write("Age entered:\t", age)
             document.write("<br><br>")
             let chk1 = (age > 18) ? document.write("Eligible") : document.write("Not Eligible")
-         
+
         </script>
     </div>
 

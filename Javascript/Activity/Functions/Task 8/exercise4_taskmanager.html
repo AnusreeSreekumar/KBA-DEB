@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager with 'Edit' and 'Save'</title>
+
+    <style>
+
+        .li_style{
+
+            margin: 10px;
+        }
+
+        .li_style button{
+
+            margin-left: 10px;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -25,6 +39,7 @@
 
             let li = document.createElement('li');
             li.textContent = tasks;
+            li.className = "li_style"
 
             let removeButton = document.createElement('button');
             removeButton.textContent = 'Remove'
@@ -36,7 +51,6 @@
             let editedText = document.createElement('input');
             editedText.type = 'text';
             editedText.value = tasks;
-            // editedText.textContent = li.textContent;
 
             let editButton = document.createElement('button');
             editButton.textContent = 'Edit';
@@ -55,8 +69,6 @@
                 saveButton.remove();
                 li.appendChild(removeButton);
                 li.appendChild(editButton);
-                // tasklist.appendChild(removeButton);
-                // removeButton.onclick();
             }
 
             }
@@ -65,7 +77,6 @@
             li.appendChild(editButton);
             // 
             tasklist.appendChild(li);
-            // tasklist.appendChild(editButton);
             taskInput.value = ' ';
         }
 
