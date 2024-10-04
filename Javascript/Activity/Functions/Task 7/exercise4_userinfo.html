@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nested Function with an Immediate function</title>
 </head>
+
 <body>
 
     <h3>User Info</h3>
@@ -14,19 +16,20 @@
 
     <p id="ouputmsg"></p>
     <p id="ouputmsg2"></p>
-    
+
     <script>
 
-        function userInfo(){
+        function userInfo() {
 
             let username = document.getElementById('dataInput').value;
-            document.getElementById('ouputmsg').textContent = 'Hello,'+ username;
-            
-            function displayMessage(){
-                document.getElementById('ouputmsg2').textContent = `User ${username} has logged in`;
-            }
-            displayMessage();
+            document.getElementById('ouputmsg').textContent = 'Hello,' + username;
+
+            (function() {
+            console.log(`User ${username} has logged in`);
+        })();
         }
+
     </script>
 </body>
+
 </html>

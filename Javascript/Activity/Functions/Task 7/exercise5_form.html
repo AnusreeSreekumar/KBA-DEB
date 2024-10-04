@@ -16,7 +16,7 @@
         <input type="number" name="1st number" id="dataInput">
         <label for="dataInput2">Enter second number</label>
         <input type="number" name="2nd number" id="dataInput2">
-        <button type="button" onclick="performCalculation()">Submit</button>
+        <button type="button" onclick="performCalculation()">Add</button>
     </form>
     <p id="outputMessage"></p>
 
@@ -26,7 +26,7 @@
             const num1 = parseFloat(document.getElementById('dataInput').value);
             // document.write("<br> first number",num1)
             const num2 = parseFloat(document.getElementById('dataInput2').value);
-            console.log(typeof num2)
+            // console.log(typeof num2)
             if(isNaN(num1) || isNaN(num2)){
                 document.write("<br><br> Please enter a valid number")
                 return;
