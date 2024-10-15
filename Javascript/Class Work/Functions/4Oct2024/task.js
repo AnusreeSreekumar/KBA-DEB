@@ -26,7 +26,7 @@ function addTask() {
                 li.classList.add('priority-medium');
                 break;
             case 3:
-                li.classList.add('priorit-low');
+                li.classList.add('priority-low');
                 break;
         }
         const compltButton = document.createElement('button');

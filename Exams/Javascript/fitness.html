@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Activity Tracker</title>
+
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin: 10px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: rgb(194, 194, 194);
+        }
+
+        .intensity-high {
+            color: red;
+        }
+
+        .intensity-medium {
+            color: orange;
+        }
+
+        .intensity-low {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Fitness Activity Tracker</h1>
+
+    <label for="activity">Activity Name: </label>
+    <input type="text" id="activity" placeholder="Enter activity name">
+    <label for="intensity">Intensity Level (1-Low, 2-Medium, 3-High)</label>
+    <input type="text" id="intensity">
+    <button onclick="addActivity()">Add Activity</button>
+    <ul id="displayActivity"></ul>
+
+    <script>
+
+        let activities = [];
+        let intensities = [];
+        let list;
+
+        function addActivity() {
+
+            const activInput = document.getElementById('activity');
+            const intenstyInput = document.getElementById('intensity');
+
+            const activity = activInput.value.trim();
+            const intensity = Number(intenstyInput.value.trim());
+
+            createElement(activity, intensity);
+            // saveWorkToLocalStorage(activity);
+        }
+
+        function createElement(activity, intensity) {
+
+            const displayList = document.getElementById('displayActivity');
+            if (activity != '' && intensity != NaN && intensity >= 1 && intensity <= 3) {
+
+                activities.push(activity);
+                intensities.push(intensity);
+
+                list = document.createElement('li');
+                list.textContent = activity;
+
+                switch (intensity) {
+
+                    case 1:
+                        list.classList = 'intensity-high';
+                        break;
+                    case 2:
+                        list.classList = 'intensity-medium';
+                        break;
+                    case 3:
+                        list.classList = 'intensity-low';
+                        break;
+                }
+
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.onclick = function () {
+
+                    let newActName = prompt('Edit activity name:', activity)
+                    activIndex = activities.indexOf(activity);
+                    activities[activIndex] = newActName;
+                    list.firstChild.textContent = newActName;
+                    activity = newActName;
+                }
+                list.appendChild(editButton);
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove'
+                removeButton.onclick = function () {
+
+                    displayList.removeChild(list);
+                    activIndex = activities.indexOf(activity);
+                    activities.splice(activIndex, 1);
+                    intensities.splice(activIndex, 1);
+                }
+                list.appendChild(removeButton);
+                
+
+                const compltButton = document.createElement('button');
+                compltButton.textContent = 'Complete';
+                compltButton.onclick = function () {
+                     
+                    list.classList.toggle('completed');
+                    // list.toggle.textContent('completed');
+                    // list.classList = 'completed';
+                }
+                list.appendChild(compltButton);
+
+                displayList.appendChild(list);
+                activity = '';
+                intensity = '';
+            }
+        }
+
+        // function saveWorkToLocalStorage(activity) {
+
+        //     let tasks = getWorkFromLocalStorage(activity);
+        //     tasks.push(activity)
+        //     // localStorage.setItem(activity);
+        //     localStorage.setItem('tasks', JSON.stringify(activity));
+        // }
+
+        // function getWorkFromLocalStorage(activity) {
+
+        //     tasks.pop(activity);
+        //     localStorage.getItem((tasks == '' ? JSON.parse(activity) : []))
+        // }
+
+    </script>
+</body>
+
+</html>
