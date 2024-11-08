@@ -1,17 +1,16 @@
 const readline = require('readline');
 const rl = readline.createInterface({
-
     input: process.stdin,
     output: process.stdout
 });
 
-const lib = new Map();
+const inventory = new Map();
 
 function askCommand() {
 
-    console.log("Welcome to Library Management System");
+    console.log("Welcome to  Book Inventory Management System");
     console.log("Available commands are: add, remove, search, update, summary, exit");
-    rl.question("Enter a command:", function (command) {
+    rl.question("\Enter a command:", function (command) {
 
         switch (command.trim().toLowerCase()) {
 
@@ -42,6 +41,7 @@ function askCommand() {
     });
 
 }
+askCommand();
 
 function addItemPrompt() {
 
@@ -57,12 +57,12 @@ function addItemPrompt() {
 
 function addBook(id, title, author) {
 
-    if (lib.has(id)) {
-        console.log(`Error: The book with ${id} is already present`);
+    if (inventory.has(id)) {
+        console.log(`Error: The book with ID ${id} is already present`);
     }
     else {
-        lib.set(id, { title, author });
-        console.log(`The book with ${id} is added to the inventory`)
+        
+        console.log(`The book with ID ${id} is added to the inventory`);
     }
 }
 
@@ -76,12 +76,12 @@ function removeItemPrompt() {
 
 function removeBook(id) {
 
-    if (lib.has(id)) {
-        lib.delete(id);
-        console.log(`The book with ${id} is removed`);
+    if (inventory.has(id)) {
+        inventory.delete(id);
+        console.log(`The book with ID ${id} is removed`);
     }
     else {
-        console.log(`Error: The book with${id} is not present`);
+        console.log(`Error: The book with ID ${id} is not present`);
     }
 }
 
@@ -96,7 +96,7 @@ function searchItemPrompt() {
 function searchBook(searchTerm) {
 
     const result = [];
-    for (const [id, book] of lib) {
+    for (const [id, book] of inventory) {
         if (id.includes(searchTerm) || book.title.includes(searchTerm) || book.author.includes(searchTerm)) {
             result.push({ id, ...book });
         }
@@ -105,7 +105,7 @@ function searchBook(searchTerm) {
         console.log("Searched Book is: ", result);
     }
     else {
-        console.log("Error: Searched book is not present")
+        console.log("Error: Searched book is not present");
     }
 }
 
@@ -123,24 +123,24 @@ function updateItemPrompt() {
 
 function updateBook(id, newTitle, newAuthor) {
 
-    if (lib.has(id)) {
-        const book = lib.get(id)
+    if (inventory.has(id)) {
+        const book = inventory.get(id)
         book.title = newTitle || book.title;
-        book.author = newAuthor || book.author
-        lib.set(id,book);
-        console.log(`The book with ${id} is updated`);
+        book.author = newAuthor || book.author;
+        inventory.set(id,book);
+        console.log(`The book with ID ${id} is updated`);
     }
     else{
-        console.log(`Error: The book with ${id} is not present`);
+        console.log(`Error: The book with ID ${id} is not present`);
     }
 }
 
 function printSummary(){
 
-    if(lib.size > 0){
-        console.log("Library summary is: ")
-        for(const[id,book]of lib){
-            console.log(`ID: ${id}, Title: ${book.title}, Author: ${book.author}`);
+    if(inventory.size > 0){
+        console.log("inventoryrary summary is: ");
+        for(const [id,item]of inventory){
+            console.log(`ID: ${id}, Title: ${item.title}, Author: ${item.author}`);
         }
     }
     else{

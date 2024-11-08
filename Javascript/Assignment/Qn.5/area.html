@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of given Shape</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="h-screen flex flex-col justify-center items-center">
+
+    <div id="container">
+        <div class="flex flex-col items-center">
+            <div class="flex items-center justify-center space-x-4">
+                <label for="sqrlen">Enter side of a Square:</label>
+                <input type="number" name="square" id="sqrlen"
+                    class="w-40 h-8 border border-solid border-black rounded-xl">
+            </div>
+
+            <button onclick="squareArea()" class="mt-6 w-36 h-10 bg-gray-500 rounded-lg text-white items-center">Area of
+                Square</button>
+        </div>
+
+        <div id="result1" class="mt-4"></div>
+    </div>
+
+    <div id="container" class="mt-14">
+        <div class="flex flex-col items-center">
+            <div class="flex justify-center items-center space-x-4 ml-2">
+                <label for="length">Enter the length:</label>
+                <input type="number" name="rectlen" id="length"
+                    class="w-40 h-8 border border-solid border-black rounded-xl">
+            </div>
+            <div class="flex justify-center space-x-4 mt-6">
+                <label for="brdth">Enter the breadth:</label>
+                <input type="number" name="rectbrdth" id="brdth"
+                    class="w-40 h-8 border border-solid border-black rounded-xl">
+            </div>
+
+            <button onclick="rectangleArea()" class="mt-6 w-36 h-10 bg-gray-500 rounded-lg text-white items-center">Area
+                of
+                Rectangle</button>
+        </div>
+
+        <div id="result2" class="mt-4"></div>
+    </div>
+
+    <div id="container" class="mt-14">
+        <div class="flex flex-col items-center">
+            <div class="flex justify-center space-x-4 ml-6">
+                <label for="radius">Enter radius:</label>
+                <input type="number" name="circle" id="radius"
+                    class="w-40 h-8 border border-solid border-black rounded-xl">
+            </div>
+
+            <button onclick="cicleArea()" class="mt-6 w-36 h-10 bg-gray-500 rounded-lg text-white">Area of
+                Circle</button>
+        </div>
+
+        <div id="result3" class="mt-4"></div>
+    </div>
+
+    <script src="shapeArea.js"></script>
+</body>
+
+</html>
