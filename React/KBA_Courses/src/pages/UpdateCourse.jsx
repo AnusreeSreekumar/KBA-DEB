@@ -1,49 +1,96 @@
 import React from 'react'
 import MainLayout from '../layouts/MainLayout'
+import coursesData from '../data/courses.json'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 const UpdateCourse = () => {
+    
+    const {id} = useParams();
+    const navigate = useNavigate();
+    const [course, setCourse] = useState({
+        Id: '',
+        title: '',
+        type: '',
+        description: '',
+        price:'',
+    })
+
+    const existingCourse = coursesData.find((course) => course.courseId === id)
+
+    const handleChange = (e) => {
+
+        const {name,value} = e.target;
+        setCourse((prevCourse) => ({
+
+            ...prevCourse,
+            [name]:value,
+        }))
+    }
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+        const index = coursesData.findIndex((c) => c.courseId === id)
+        if(index !== -1){
+
+            coursesData[index] = course;
+        }
+        navigate(`/course/${id}`)
+    } 
+
+    if(!existingCourse){
+
+        return (
+
+            <MainLayout>
+                <h1 className='text-3xl text-purple-800 text-center font-semibold mt-6'>Course Not Found</h1>
+            </MainLayout>
+        )
+    }
     return (
 
-        <>
             <MainLayout>
-                <section class="bg-white mb-20">
-                    <div class="container m-auto max-w-2xl py-2">
-                        <div class="bg-purple-100 px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
-                            <form onSubmit={submitForm}>
-                                <h2 class="text-3xl text-purple-800 text-center font-semibold mb-6">
+                <section className="bg-white mb-20">
+                    <div className="container m-auto max-w-2xl py-2">
+                        <div className="bg-purple-100 px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
+                            <form onSubmit={handleSubmit}>
+                                <h2 className="text-3xl text-purple-800 text-center font-semibold mb-6">
                                     Update Course
                                 </h2>
 
-                                <div class="mb-4">
-                                    <label class="block text-gray-700 font-bold mb-2">
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 font-bold mb-2">
                                         Course Name
                                     </label>
                                     <input
                                         type="text"
                                         id="title"
                                         name="title"
-                                        class="border rounded w-full py-2 px-3 mb-2"
+                                        className="border rounded w-full py-2 px-3 mb-2"
                                         placeholder="eg. Certified Blockchain Associate"
                                         required
-
+                                        value={course.title}
+                                        onChange={handleChange}
                                     />
                                 </div>
 
 
 
-                                <div class="mb-4">
+                                <div className="mb-4">
                                     <label
                                         htmlFor="type"
-                                        class="block text-gray-700 font-bold mb-2"
+                                        className="block text-gray-700 font-bold mb-2"
                                     >
                                         Course Type
                                     </label>
                                     <select
                                         id="type"
                                         name="type"
-                                        class="border rounded w-full py-2 px-3"
+                                        className="border rounded w-full py-2 px-3"
                                         required
-
+                                        value={course.type}
+                                        onChange={handleChange}
                                     >
                                         <option value="Self-Paced">Self-Paced</option>
                                         <option value="Instructor-Led">Instructor-Led</option>
@@ -51,35 +98,39 @@ const UpdateCourse = () => {
                                     </select>
                                 </div>
 
-                                <div class="mb-4">
+                                <div className="mb-4">
                                     <label
                                         htmlFor="description"
-                                        class="block text-gray-700 font-bold mb-2"
+                                        className="block text-gray-700 font-bold mb-2"
                                     >
                                         Description
                                     </label>
                                     <textarea
                                         id="description"
                                         name="description"
-                                        class="border rounded w-full py-2 px-3"
+                                        className="border rounded w-full py-2 px-3"
                                         rows="4"
                                         placeholder="add a short course description"
+                                        value={course.description}
+                                        onChange={handleChange}
 
                                     ></textarea>
                                 </div>
 
-                                <div class="mb-4">
+                                <div className="mb-4">
                                     <label
                                         htmlFor="type"
-                                        class="block text-gray-700 font-bold mb-2"
+                                        className="block text-gray-700 font-bold mb-2"
                                     >
                                         Price
                                     </label>
                                     <select
                                         id="price"
                                         name="price"
-                                        class="border rounded w-full py-2 px-3"
+                                        className="border rounded w-full py-2 px-3"
                                         required
+                                        value={course.price}
+                                        onChange={handleChange}
 
                                     >
                                         <option value="Rs.5000">Rs.5000</option>
@@ -90,7 +141,7 @@ const UpdateCourse = () => {
 
                                 <div>
                                     <button
-                                        class="bg-purple-500 hover:bg-purple-600 my-10 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+                                        className="bg-purple-500 hover:bg-purple-600 my-10 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                                         type="submit"
                                     >
                                         Update Course
@@ -101,9 +152,6 @@ const UpdateCourse = () => {
                     </div>
                 </section>
             </MainLayout>
-
-
-        </>
     )
 }
 

@@ -1,16 +1,46 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+// import Navbar from '../components/Navbar'
+import MainLayout from '../layouts/MainLayout'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import coursesData from '../data/courses.json'
 
 const AddCourse = () => {
+
+     const navigate = useNavigate();
+     const [course, setCourse] = useState({
+        Id: '',
+        title: '',
+        type: '',
+        description: '',
+        price:'',
+    })
+
+    const handleChange = (e) => {
+
+        const {name,value} = e.target;
+        setCourse((prevCourse) => ({
+
+            ...prevCourse,
+            [name]:value,
+        }))
+    }
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+        coursesData.push(course);
+        navigate('/courses')
+    } 
+
     return (
-        <>
-            <Navbar />
+        <MainLayout>
 
             <section className="bg-white mb-20">
                 <div className="container m-auto max-w-2xl py-2">
                     <div className="bg-purple-100 px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
 
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <h2 className="text-3xl text-purple-800 text-center font-semibold mb-6">
                                 Add Course
                             </h2>
@@ -26,7 +56,8 @@ const AddCourse = () => {
                                     className="border rounded w-full py-2 px-3 mb-2"
                                     placeholder="eg. Certified Blockchain Associate"
                                     required
-
+                                    value={course.title}
+                                    onChange={handleChange}
                                 />
                             </div>
 
@@ -36,11 +67,13 @@ const AddCourse = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    id="courseId"
-                                    name="courseId"
+                                    id="Id"
+                                    name="Id"
                                     className="border rounded w-full py-2 px-3 mb-2"
                                     placeholder="eg. 1"
                                     required
+                                    value={course.Id}
+                                    onChange={handleChange}
 
                                 />
                             </div>
@@ -57,6 +90,8 @@ const AddCourse = () => {
                                     name="type"
                                     className="border rounded w-full py-2 px-3"
                                     required
+                                    value={course.type}
+                                    onChange={handleChange}
 
                                 >
                                     <option value="Self-Paced">Self-Paced</option>
@@ -78,6 +113,8 @@ const AddCourse = () => {
                                     className="border rounded w-full py-2 px-3"
                                     rows="4"
                                     placeholder="Small description on the course"
+                                    value={course.description}
+                                    onChange={handleChange}
 
                                 ></textarea>
                             </div>
@@ -94,6 +131,8 @@ const AddCourse = () => {
                                     name="price"
                                     className="border rounded w-full py-2 px-3"
                                     required
+                                    value={course.price}
+                                    onChange={handleChange}
 
                                 >
                                     <option value="Rs.5000">Rs.5000</option>
@@ -114,7 +153,8 @@ const AddCourse = () => {
                     </div>
                 </div>
             </section>
-        </>
+
+        </MainLayout>
     )
 }
 
