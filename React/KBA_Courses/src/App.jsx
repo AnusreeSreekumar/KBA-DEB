@@ -27,7 +27,7 @@ const App = () => {
         <Route path='/addcourse' element={<AddCourse />} />
 
         {/* Course Details Page */}
-        <Route path='/courses/:id' element={<CoursePage />} />
+        <Route path='/course/:id' element={<CoursePage />} />
 
         {/* Update Course Page */}
         <Route path='/editcourse/:id' element={<UpdateCourse />} />

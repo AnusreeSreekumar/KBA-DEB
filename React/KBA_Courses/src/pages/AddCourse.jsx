@@ -9,7 +9,7 @@ const AddCourse = () => {
 
      const navigate = useNavigate();
      const [course, setCourse] = useState({
-        Id: '',
+        courseId: '',
         title: '',
         type: '',
         description: '',
@@ -72,7 +72,7 @@ const AddCourse = () => {
                                     className="border rounded w-full py-2 px-3 mb-2"
                                     placeholder="eg. 1"
                                     required
-                                    value={course.Id}
+                                    value={course.courseId}
                                     onChange={handleChange}
 
                                 />

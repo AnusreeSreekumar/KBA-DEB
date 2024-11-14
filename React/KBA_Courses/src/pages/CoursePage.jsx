@@ -9,9 +9,11 @@ import UpdateCourse from './UpdateCourse'
 
 const CoursePage = () => {
   
-  const {id} = useParams;
+  const {id} = useParams();
+  // console.log("Selected course id: ",id);
+  
   const Course = coursesData.find((course) => course.courseId === id)
-  if(!existingCourse){
+  if(!Course){
     return(
       <MainLayout>
 
