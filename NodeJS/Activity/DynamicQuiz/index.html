@@ -19,18 +19,18 @@
         </button>
     </div>
 
-    <div id="qzcontainer" style="display: none;">
-        <p class="text-center font-semibold">Start Quiz</p>
-        <div id="quiz">
+    <div id="qzcontainer" style="display: none;" class="flex flex-col justify-center mt-6">
+        <p id="startQuiz" class="font-semibold">Start Quiz</p>
+        <div id="quiz" class="mt-6">
             <p id="questn"></p>
             <ul id="mcq"></ul>
             <p id="timer"></p>
-            <div>
-                <button id="prev" onclick="prevQuestion()">Previous</button>
-                <button id="next" onclick="nextQuestion()">Next</button>
+            <div class="space-x-2 mt-4">
+                <button id="prev" onclick="prevQuestion()" class="w-20 h-8 bg-gray-300 rounded-lg">Previous</button>
+                <button id="next" onclick="nextQuestion()" class="w-20 h-8 bg-gray-300 rounded-lg">Next</button>
             </div>
         </div>
-        <div id="dispscr" style="display: none;">
+        <div id="dispscr" style="display: none;" class="mt-6">
             <h2>Your Score: <span id="score"></span></h2>
         </div>
     </div>
