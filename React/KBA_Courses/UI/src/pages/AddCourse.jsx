@@ -1,37 +1,49 @@
 import React from 'react'
-// import Navbar from '../components/Navbar'
 import MainLayout from '../layouts/MainLayout'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import coursesData from '../data/courses.json'
 
 const AddCourse = () => {
 
-     const navigate = useNavigate();
-     const [course, setCourse] = useState({
-        courseId: '',
-        title: '',
-        type: '',
-        description: '',
-        price:'',
-    })
+    const [title, setTitle] = useState('');
+    const [courseId, setcourseId] = useState('');
+    const [type, setType] = useState('Self-Paced');
+    const [description, setDescription] = useState('');
+    const [price, setPrice] = useState('Rs.5000');
 
-    const handleChange = (e) => {
+    const navigate = useNavigate();
 
-        const {name,value} = e.target;
-        setCourse((prevCourse) => ({
-
-            ...prevCourse,
-            [name]:value,
-        }))
-    }
-
-    const handleSubmit = (e) => {
+    const submitForm = async (e) => {
 
         e.preventDefault();
-        coursesData.push(course);
-        navigate('/courses')
-    } 
+
+        const newCourse = {
+
+            title,
+            courseId,
+            type,
+            description,
+            price,
+        }
+        try {
+
+            const res = fetch('http://127.0.0.1:5000/courses', {
+
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newCourse),
+            });
+            if (res.ok) {
+                navigate('/courses')
+            }
+            else {
+                console.log('Failed to add course');
+            }
+        }
+        catch (error) {
+            console.log('Error adding course');
+        }
+    };
 
     return (
         <MainLayout>
@@ -40,7 +52,7 @@ const AddCourse = () => {
                 <div className="container m-auto max-w-2xl py-2">
                     <div className="bg-purple-100 px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
 
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={submitForm}>
                             <h2 className="text-3xl text-purple-800 text-center font-semibold mb-6">
                                 Add Course
                             </h2>
@@ -56,8 +68,8 @@ const AddCourse = () => {
                                     className="border rounded w-full py-2 px-3 mb-2"
                                     placeholder="eg. Certified Blockchain Associate"
                                     required
-                                    value={course.title}
-                                    onChange={handleChange}
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
                                 />
                             </div>
 
@@ -67,14 +79,13 @@ const AddCourse = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    id="Id"
-                                    name="Id"
+                                    id="courseId"
+                                    name="courseId"
                                     className="border rounded w-full py-2 px-3 mb-2"
                                     placeholder="eg. 1"
                                     required
-                                    value={course.courseId}
-                                    onChange={handleChange}
-
+                                    value={courseId}
+                                    onChange={(e) => setcourseId(e.target.value)}
                                 />
                             </div>
 
@@ -90,8 +101,8 @@ const AddCourse = () => {
                                     name="type"
                                     className="border rounded w-full py-2 px-3"
                                     required
-                                    value={course.type}
-                                    onChange={handleChange}
+                                    value={type}
+                                    onChange={(e) => setType(e.target.value)}
 
                                 >
                                     <option value="Self-Paced">Self-Paced</option>
@@ -113,8 +124,8 @@ const AddCourse = () => {
                                     className="border rounded w-full py-2 px-3"
                                     rows="4"
                                     placeholder="Small description on the course"
-                                    value={course.description}
-                                    onChange={handleChange}
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
 
                                 ></textarea>
                             </div>
@@ -131,8 +142,8 @@ const AddCourse = () => {
                                     name="price"
                                     className="border rounded w-full py-2 px-3"
                                     required
-                                    value={course.price}
-                                    onChange={handleChange}
+                                    value={price}
+                                    onChange={(e) => setPrice(e.target.value)}
 
                                 >
                                     <option value="Rs.5000">Rs.5000</option>

@@ -8,6 +8,8 @@ import CoursePage from './pages/CoursePage'
 import NotFound from './pages/NotFound'
 import UpdateCourse from './pages/UpdateCourse'
 import Courses from './pages/Courses'
+import DeleteCourse from './pages/DeleteCourse'
+import { SignupPage } from './pages/Signup Page'
 
 const App = () => {
   return (
@@ -35,6 +37,8 @@ const App = () => {
         {/* Not Found Page */}
         <Route path='*' element={<NotFound />} />
 
+        {/* Delete Course Page */}
+        <Route path='/deletecourse/:id'element={<DeleteCourse />} />
 
       </Routes>
     </Router>

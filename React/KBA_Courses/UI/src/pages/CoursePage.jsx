@@ -1,33 +1,40 @@
-import React from 'react'
-// import Navbar from '../components/Navbar'
-import banner_kba from '../assets/images/banner-kba.png' 
+import React, { useState, useEffect } from 'react'
+import banner_kba from '../assets/images/banner-kba.png'
 import MainLayout from '../layouts/MainLayout'
-import { useParams, Link } from 'react-router-dom'
-import coursesData from '../data/courses.json'
+import { useParams, Link, useLoaderData, useNavigate } from 'react-router-dom'
 import NotFound from '../pages/NotFound'
 import UpdateCourse from './UpdateCourse'
 
 const CoursePage = () => {
-  
-  const {id} = useParams();
-  // console.log("Selected course id: ",id);
-  
-  const Course = coursesData.find((course) => course.courseId === id)
-  if(!Course){
-    return(
-      <MainLayout>
 
-        <NotFound />
-      </MainLayout>
-    )
-  
+  const { id } = useParams();
+  // console.log("Selected course id: ",id);
+  const course = useLoaderData();
+  const navigate = useNavigate();
+  const userType = getUserType();
+
+  const deleteCourse = async () => {
+
+    const confirmDelete = window.confirm('Are you rsure you want to delete this course?');
+    if(!confirmDelete) return;
+
+    const res = await fetch(`/courses/${id}`, {
+      method : "DELETE",
+      credentials : "include"
+    });
+    if(res.ok){
+      navigate('/courses');
+    }
+    else{
+      alert('Error deleting course')
+    }
   }
 
   return (
 
     <MainLayout>
 
-<div className="bg-white text-gray-900 mb-10 pb-10">
+      <div className="bg-white text-gray-900 mb-10 pb-10">
         <div className="max-w-4xl mx-auto p-5 ">
 
           <section>
@@ -43,11 +50,11 @@ const CoursePage = () => {
             <div className="p-6">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
                 <h1 className="text-3xl font-bold text-purple-800">
-                  {Course.title}
+                  {course.title}
                 </h1>
                 <div className="flex items-center mt-2 sm:mt-0">
                   <span className="text-2xl text-red-500 font-semibold mr-4">
-                    {Course.price}
+                    {course.price}
                   </span>
                   <button className="bg-purple-500 text-white px-6 py-2 rounded hover:bg-purple-600">
                     Add to Cart
@@ -58,7 +65,7 @@ const CoursePage = () => {
                 <h2 className="text-2xl font-semibold text-purple-800 mb-2">
                   Description
                 </h2>
-                <p>{Course.description}</p>
+                <p>{course.description}</p>
               </div>
 
               <div className="mb-6">
@@ -88,8 +95,9 @@ const CoursePage = () => {
           </div>
         </div>
         <div className="flex flex-row justify-end gap-4 mr-[205px] ">
-          <Link to={`/editcourse/${Course.courseId}`}className="flex bg-blue-500 hover:bg-blue-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline justify-center items-center">Edit Course</Link>
-          <a className="flex bg-red-500 hover:bg-red-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline  justify-center items-center">Remove Course</a>
+          <Link to={`/editcourse/${course.courseId}`} className="flex bg-blue-500 hover:bg-blue-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline justify-center items-center">Edit Course</Link>
+          <Link to={`/deletecourse/${course.courseId}`} className="flex bg-red-500 hover:bg-red-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline  justify-center items-center"
+            onClick={deleteCourse}>Remove Course</Link>
 
         </div>
       </div>
@@ -98,4 +106,17 @@ const CoursePage = () => {
   )
 }
 
-export default CoursePage
+const courseLoader = async ({ params }) => {
+
+  const res = await fetch(`http://localhost:5000/courses/${params.id}`, {
+
+    credentials: "include"
+  });
+  if (!res.ok) {
+    throw new Response('Course not found', { status: 404 });
+  }
+  return res.json;
+
+}
+
+export {CoursePage as default, courseLoader}
