@@ -1,28 +1,27 @@
-import { Router } from "express";
-const router = Router();
-import { find, findOne, create, findOneAndUpdate, findOneAndDelete } from "../models/courses";
-import verifyToken from "../middleware/authMiddleware";
+const express = require("express");
+const router = express.Router();
+const courses = require("../models/courses");
+const verifyToken = require("../middleware/auth");
 
-//To fetch all courses in the DB
 router.get("/courses",verifyToken, async (req, res) => {
-  const details = await find({});
+  const details = await courses.find({});
   res.json(details);
 });
 
-//To fetch the details of selected course
 router.get("/courses/:id",verifyToken, async (req, res) => {
   const courseId = req.params.id;
-  const details = await findOne({ courseId: courseId }, { _id: 0 });
+  const details = await courses.findOne({ courseId: courseId }, { _id: 0 });
   res.json(details);
 });
 
-//To add a course to the DB
 router.post("/courses",verifyToken, async (req, res) => {
   try {
     if (req.userType == "admin") {
       const data = req.body;
-      const result = await create(data);
+      const result = await courses.create(data);
       res.status(201).json("Added course successfully");
+      console.log(result);
+      
     }
   } catch (error) {
     console.log(error);
@@ -30,12 +29,11 @@ router.post("/courses",verifyToken, async (req, res) => {
   }
 });
 
-//To update the selected course details
 router.put("/courses/:id",verifyToken, async (req, res) => {
   const data = req.body;
   const courseId = req.params.id;
   try {
-    const result = await findOneAndUpdate({ courseId: courseId }, data);
+    const result = await courses.findOneAndUpdate({ courseId: courseId }, data);
     if (!result) {
       return res.status(404).send("Course not found");
     }
@@ -45,11 +43,10 @@ router.put("/courses/:id",verifyToken, async (req, res) => {
   }
 });
 
-//To delete a selected course
 router.delete("/courses/:id",verifyToken, async (req, res) => {
   const courseId = req.params.id;
   try {
-    const result = await findOneAndDelete({ courseId: courseId });
+    const result = await courses.findOneAndDelete({ courseId: courseId });
     if (!result) {
       return res.status(404).send("Course not found");
     }
@@ -59,4 +56,4 @@ router.delete("/courses/:id",verifyToken, async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;

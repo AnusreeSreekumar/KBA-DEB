@@ -1,5 +1,5 @@
-import { Schema } from 'mongoose';
-import { model } from 'mongoose';
+const {Schema} =require('mongoose');
+const {model} =require('mongoose');
 
 const courseSchema = new Schema({
    courseId: { type: String, required: true },
@@ -11,4 +11,4 @@ const courseSchema = new Schema({
 
 const courses = model('courses', courseSchema);
 
-export default courses;
+module.exports = courses;

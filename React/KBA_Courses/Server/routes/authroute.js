@@ -1,13 +1,12 @@
-import { Router } from "express";
-import User, { findOne } from "../models/User";
-import { hash, compare } from "bcrypt";
-import { sign } from "jsonwebtoken";
+const express = require("express");
+const router = express.Router();
+const User = require("../models/user");
 
-
-const auth = Router();
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 // User registration
-auth.post("/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     // const {} = userDetails
     const userDetails = req.body;
@@ -15,15 +14,11 @@ auth.post("/register", async (req, res) => {
     const password = userDetails.password;
     const email = userDetails.email;
     const userType = userDetails.userType
-
     // const { username, password } = req.body;
-    const hashedPassword = await hash(password, 10);
-
+    const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({ username, password: hashedPassword, email, userType });
     await user.save();
-
     res.status(201).json({ message: "User registered successfully" });
-
   } catch (error) {
     console.log("err", error);
     res.status(500).json({ error: "Registration failed" });
@@ -31,29 +26,27 @@ auth.post("/register", async (req, res) => {
 });
 
 // User login
-auth.post("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
     console.log(email, password);
-
-    const user = await findOne({ email });
+    const user = await User.findOne({ email : email });
     console.log(user, "user");
-
     if (!user) {
       return res
         .status(401)
         .json({ error: "Authentication failed- User doesn't exists" });
     }
 
-    const passwordMatch = await compare(password, user.password);
+    const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
       return res
         .status(401)
         .json({ error: "Authentication failed- password doesn't match" });
     }
 
-    const token = sign(
+    const token = jwt.sign(
       { userId: user._id, userType: user.userType },
       "your-secret-key",
       {
@@ -76,10 +69,10 @@ auth.post("/login", async (req, res) => {
 });
 
 // Logout
-auth.get("/logout", (req, res) => {
+router.get("/logout", (req, res) => {
   res.clearCookie("Authtoken");
   res.status(200).send("Logout successful");
   return res;
 });
 
-export default auth;
+module.exports = router;

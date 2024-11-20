@@ -12,13 +12,14 @@ const SignupPage = () => {
 
     const signupSubmit = async (userDetails) => {
 
-        const res = await fetch('https://127.0.0.1:5000/register', {
+        const res = await fetch('/api/register', {
 
             method: "POST",
             // credentials : "include",
             headers: { "Content-Type": "application/json" },
-            div: JSON.stringify(userDetails)
+            body: JSON.stringify(userDetails)
         });
+        console.log("signup", res)
 
         if (res.ok) {
             toast.success('Signup successful');
@@ -38,6 +39,8 @@ const SignupPage = () => {
             email,
             userType
         };
+        console.log("user details", userDetails)
+
         signupSubmit(userDetails);
     }
     return (
@@ -116,4 +119,4 @@ const SignupPage = () => {
     )
 }
 
-export {SignupPage}
+export default SignupPage

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet, Navigate } from 'react-router-dom';
-import {getUserType} from '../utils/auth';
+import getUserType from '../utils/auth';
 
 const AuthLayout = () => {
 

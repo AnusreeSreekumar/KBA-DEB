@@ -1,17 +1,10 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import router from '../Server/routes/routes.js';
-import auth from './routes/authroute.js';
-import cookieParser from 'cookie-parser';
-// const { mongoose } = require("mongoose");
-
-// const cors = require("cors");
-// const routes = require("./routes/routes").default;
-// const auth = require('./routes/auth')
-// const cookieParser = require('cookie-parser')
-
+const express = require("express");
+const { mongoose } = require("mongoose");
 const app = express();
+const cors = require("cors");
+const routes = require("./routes/routes");
+const auth = require('./routes/authroute')
+const cookieParser = require('cookie-parser')
 
 app.use(
   cors({ 
@@ -22,7 +15,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-app.use("/", router);
+app.use("/", routes);
 app.use("/", auth)
 
 const PORT = 5000;
@@ -30,7 +23,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-mongoose.connect("mongodb://localhost:27017/kba_courses");
+mongoose.connect("mongodb://localhost:27017/kba-courses");
 
 const database = mongoose.connection;
 
