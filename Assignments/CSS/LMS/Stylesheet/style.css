@@ -1,0 +1,173 @@
+body{
+    background-color: rgb(207, 204, 169)
+}
+
+.main{
+    display: flex;
+    width:1330px;
+    /* justify-content:flex-end; */
+}
+
+.main img{
+    width: 80px;
+    height: 70px;
+    /* float: left; */
+    position: fixed;
+    margin-left: 10px;
+}
+
+.main h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    color:rgb(9, 115, 63);
+    margin-left: 320px;
+    /* float: left; */
+}
+
+.main a{
+    margin-left: 20px;
+    padding-right: 20px;
+    justify-items: end;
+}
+
+img{
+    width: 800px;
+    height: 450px;
+    margin-left: 230px;
+    justify-content: space-between;
+}
+
+.menu{
+    display: flex;
+    margin-left: 180px;
+    margin-top: 20px;
+}
+
+.menu h3{
+    margin-right: 100px;
+}
+
+.menu input[type="button"]{
+    margin-right: 100px;
+    width: 55px;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: aqua;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(9, 115, 63);
+}
+
+.container{
+    width: 900px;
+    height: 500px;
+    margin-left: 200px;
+    /* text-align: "center"; */
+    background-color: #d7dbdd;
+}
+
+.optns{
+   padding-top: 40px;
+   margin-left: 300px;
+   /* justify-items: center; */
+}
+
+.container input[type="submit"]{
+    margin-top: 40px;
+    margin-left: 400px;
+}
+
+.logcontain{
+    width: 900px;
+    height: 500px;
+    background-color: beige;
+    margin-left: 230px;
+    display: flex;
+}
+
+.logimg img{
+   width: 450px;
+   height: 500px;
+   margin-left: 0px;
+}
+
+.logoptns{
+   margin-top: 120px; 
+   margin-left: 40px;
+}
+
+.creds{
+    margin-top: 20px;
+    margin-left: 25px;
+    padding-top: 20px;
+}
+ 
+.logoptns input[type="submit"]{
+    margin-left: 105px;
+    margin-top: 45px;
+}
+
+.diva{
+   margin-left: 85px;
+   margin-top: 50px;
+}
+
+.addcontainer{
+    width: 900px;
+    height: 500px;
+    margin-left: 200px;
+    background-color: #d7dbdd;
+}
+
+.addcontainer img{
+    width: 440px;
+    height: 500px;
+    position: fixed;
+    margin-left: 0px;
+}
+
+.addoptns{
+    padding-top: 40px;
+    margin-left: 460px;
+}
+
+.addoptns input[type="text"]{
+    width: 250px;
+    height: 20px;
+}
+
+.addoptns textarea{
+    width: 200px;
+    height: 50px;
+}
+
+.addbtn{
+    margin-top: 30px;
+    margin-left: 590px;
+}
+
+h2{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.viewbuk{
+    display: flex;
+}
+
+.booklst img{
+    width: 140px;
+    height: 150px;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+.viewname{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+

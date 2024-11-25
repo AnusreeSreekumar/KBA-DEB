@@ -1,0 +1,23 @@
+
+        ****For Loop***** 
+        Syntax: 
+        for(initialization;condition;increment/decrement){
+        stmts.....    
+        }
+
+        ****While Loop*****
+        Syntax:
+        initialize looping variable
+         while(condition){
+         stmt;
+         increment/decrement;
+         }
+        
+         ****Do-While****/
+        Syntax:
+         initialization
+
+        do{
+             stmt;
+             increment/decrement
+        }while(condition)

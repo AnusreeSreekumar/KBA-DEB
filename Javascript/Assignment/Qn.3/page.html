@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare two numbers</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="h-screen flex justify-center items-center">
+
+    <div id="container" class="text-center">
+        <div class="flex items-center space-x-4 ml-6">
+            <label for="firstnum">First number</label>
+            <input type="number" name="num1" id="firstnum"
+                class="w-auto h-14 border border-solid border-black rounded-xl">
+        </div>
+        <div class="flex items-center space-x-4 mt-10">
+            <label for="secondnum" id="num2">Second number</label>
+            <input type="number" name="num2" id="secondnum"
+                class="w-auto h-14 border border-solid border-black rounded-xl">
+        </div>
+
+        <button onclick="compareNumbers()" class="mt-6 w-24 h-10 bg-gray-500 rounded-lg text-white">Compare</button>
+
+        <div id="answer" class="mt-6 text-emerald-800 font-semibold"></div>
+    </div>
+
+    <script src="compare.js"></script>
+</body>
+
+</html>

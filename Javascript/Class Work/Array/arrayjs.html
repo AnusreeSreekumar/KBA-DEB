@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        let a = [1,2,3,4,5,6]
+        document.write(a)
+        document.write("<br><br>The value in 3rd position is: ", a[3])
+        document.write("<br><br> Sum of numbers in positions 3 & 5 are:&nbsp", a[3]+"+",a[5]+"=",a[3]+a[5])
+        document.write("<br><br> Value in 10th position: ",a[10])
+        // document.write(a.length)
+
+        let sum = 0;
+        document.write("<br><br> Values in array is:&nbsp")
+        for(let i=0; i<a.length;i++){
+           document.write(a[i])
+           sum = sum + a[i]
+        }
+        document.write("<br><br> Sum of all values is: ",sum)
+
+        let temp = [];
+        for(let i=0; i<a.length;i++){ 
+            a[i] = a[i] + 2
+        }
+        document.write("<br><br> Values of array after adding '2' to each: ",a)
+    </script>
+    
+</body>
+</html>

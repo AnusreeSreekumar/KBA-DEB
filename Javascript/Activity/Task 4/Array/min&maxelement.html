@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min & Max element in Array</title>
+</head>
+<body>
+    
+    <h3>Program to print the minimum & maximum element in Array </h3>
+
+    <script>
+
+        let a = [8,2,6,7,3,1];
+        let min = 0;
+        let max = 0;
+
+        document.write("Entered array is:\t", a)
+        
+        //To find min number in the array:
+        for(i = 0; i < a.length; i++){
+
+            if(a[i] < a[i+1]){
+                
+                if(min == 0 || a[i] < min){
+
+                    min = a[i]
+                }
+            }
+            else{
+
+                if(min == 0 || a[i+1] < min){
+
+                    min = a[i+1]
+                }
+                
+            }
+        }
+        document.write("<br><br> Minimum number in the array is: ", min)
+
+        //To find maximum  number in the array:
+        for(i = 0; i < a.length; i++){
+
+            if(a[i] > a[i+1]){
+
+                if(max == 0 || a[i] > max){
+
+                    max = a[i]
+                }
+            }
+            else{
+
+                if(max == 0 || a[i+1] > max){
+
+                    max = a[ai+1]
+                }
+            }
+        }
+
+        document.write("<br><br> Maximum number in the array is: ", max)
+    </script>
+</body>
+</html>

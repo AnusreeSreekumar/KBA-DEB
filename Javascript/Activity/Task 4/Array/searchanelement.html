@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search an element in an Array</title>
+</head>
+<body>
+    
+    <h3>Program to search an element in an array</h3>
+
+    <script>
+
+        let a = [25,30,35,89,74]
+
+        let srchnum = 74
+        count = 0;
+
+        document.write("Entered array is:\t\t", a)
+
+        for(i = 0; i < a.length; i++){
+
+            if(a[i] == srchnum){
+
+                document.write("<br><br> The search element\t"+ srchnum+ "\tis found")
+                count = count + 1
+            }
+        }
+
+        if(count == 0){
+
+            document.write("<br><br> There is no element as\t"+ srchnum)
+        }
+       
+    </script>
+</body>
+</html>

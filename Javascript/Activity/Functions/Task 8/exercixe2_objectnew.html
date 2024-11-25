@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object constructor</title>
+</head>
+
+<body>
+
+    <h3>Create an object constructor using the new keyword</h3>
+    <p>Open Console for output</p>
+    <p id="bookDetails"></p>
+    <p id="bookDetails1"></p>
+
+    <script>
+
+        //Qn: Create an object constructor Book that contains properties such as title, author, and year
+        //Book function is created with respective elements and getDetails function
+        function Book(title, author, year) {
+
+            this.title = title;
+            this.author = author;
+            this.year = year;
+
+            //Qn: method getDetails that logs the book's details in the format "Title: [title], Author: [author], Year: [year]".
+            this.getDetails = function () {  
+
+                return `Title: ${this.title}, Author: ${this.author}, Year: ${this.year}`;
+            }
+        };
+
+        //Qn: Instantiate two books and log their details using the getDetails method.
+        let book1 = new Book('Randamoozham', 'M.T. Vasudevan Nair', 1984);
+        let book2 = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 1925);
+
+        document.getElementById("bookDetails").textContent = book1.getDetails();
+        document.getElementById("bookDetails1").textContent = book2.getDetails();
+
+    </script>
+</body>
+
+</html>

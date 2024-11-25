@@ -1,0 +1,99 @@
+.maindiv{
+    background-color: whitesmoke;
+    height:60px;
+    box-shadow: 25px;
+}
+
+.image{
+    float: left;
+}
+
+img{
+    width: 50px;
+    height: 50px;   
+}
+
+.menu{
+    justify-content: flex-end;
+    display: flex;
+    list-style-type: none;
+    padding-top: 20px;
+    
+}
+
+.menu a{
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:darkmagenta;
+    font-size: small;
+    padding-right: 20px;
+}
+
+.head{
+    /* position: fixed; */
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+.head2{
+    width:1400px;
+    height: 90px;
+    background-color: lightblue;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.topic1{
+    margin-top: 30px;
+    margin-left: 30px;
+    width:400px;
+    height: 400px;
+    background-color: rgb(198, 217, 218);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* border-style: solid; */
+    
+}
+
+.topic1 img{
+    width:350px;
+    height: 150px;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.topic1 p{
+    padding-top: 20px;
+    text-align: center;
+    /* margin-left: 15px; */
+}
+
+
+.topic1 a{
+    text-decoration: none;
+    color: blueviolet;
+    font-size: small;
+}
+
+.anger{
+    padding-top: 20px;
+    padding-left: 15px;
+}
+
+.topic1 input[type="button"]{
+    /* position: static; */
+  margin-left: 15px;
+  margin-top: 10px;
+  background-color: mediumpurple;
+  border-style: hidden;
+  height: 25px;
+  border-radius: 3px;
+  color: white;
+  font-size: small;
+}
+
+.row{
+    display: flex;
+}
