@@ -50,7 +50,7 @@ const AddCourse = () => {
           <h2 className="text-3xl text-purple-800 text-center font-semibold mb-6">
             Add Course
           </h2>
-
+    
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
               Course Name

@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { appntmntEntries } from "../Models/appointmentSchema.js";
 import mongoose from "mongoose";
-import { forEach } from "lodash";
 
 const appntmntRouter = Router();
 
@@ -76,16 +75,16 @@ appntmntRouter.get('/viewAppointments', async (req, res) => {
 
         const result = await appntmntEntries.find();
         console.log("Fetched entries in DB",result);
-        
-        result.forEach(element => {
-            if (result.dbDoctorName == searchItem) {
 
-                DocArray.push(element)
-            }
-            else {
-                console.log(`No Appointment for Doctor ${searchItem}`);
-            }
-        });
+        // result.forEach(element => {
+        //     if (result.dbDoctorName == searchItem) {
+
+        //         DocArray.push(element)
+        //     }
+        //     else {
+        //         console.log(`No Appointment for Doctor ${searchItem}`);
+        //     }
+        // });
         console.log(`Appointment for Doctor ${searchItem} is listed`);
         res.status(200).json({ message: DocArray })
     }
