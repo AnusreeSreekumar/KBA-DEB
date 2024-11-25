@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task 2</title>
+</head>
+
+<body>
+
+    <h4>Program to swap 2 numbers using a temporary variable</h4>
+    <script>
+        let a, b, c;
+        a = 10;
+        b = 15;
+        document.write("Two nos are: ", a, " and ", b)
+        if (a != b) {
+            c = a;
+            a = b;
+            b = c;
+        }
+        document.write("<br><br> Swapped nos are: ", a, " and ", b)
+    </script>
+
+    <br><br>
+    <h4>Program to swap 2 numbers w/o using temporary variable</h4>
+    <script>
+        let d, e;
+        d = 25;
+        e = 60;
+        document.write("Two nos are: ", d, " and ", e)
+        if (d != e) {
+            d = d + e;
+            e = d - e;
+            d = d - e;
+        }
+        document.write("<br><br>Swapped nos are: ", d, " and ", e)
+    </script>
+
+    <br><br>
+    <h4>Program to convert Celsius to fahrenheit</h4>
+    <script>
+        let cel, far;
+        cel = 20;
+        far = cel * (9 / 5) + 32
+        document.write("Farenheit equal to " + cel + "&deg; Celsius is: ", far + "&deg;F")
+    </script>
+
+    <br><br>
+    <h4>Program to find square of a number</h4>
+    <script>
+        let num, sqr;
+        num = 5;
+        sqr = num * num;
+        document.write("Square of " + num + " is: ", sqr)
+    </script>
+
+    <br><br>
+    <h4>Program to find cube of a number</h4>
+    <script>
+        let n, cube;
+        n = 6;
+        cube = n * n * n;
+        document.write("Cube of " + n + " is: ", cube)
+    </script>
+
+    <br><br>
+    <h4>Program to find area of square, circle, rectangle, triangle</h4>
+    <script>
+        let side, rad, len, brd, base, ht;
+        side = 4;
+        rad = 6;
+        pi = 3.14;
+        len = 8;
+        brd = 4;
+        base = 5;
+        ht = 7;
+        ht2 = 9;
+
+        asqr = side * side;
+        acircle = pi * (rad * rad);
+        arect = len * brd;
+        atri = 0.5 * (base * ht);
+
+        document.write("Area of Square is: ", asqr + " square units")
+        document.write("<br><br>Area of Circle is: ", acircle + " square units")
+        document.write("<br><br>Area of Rectangle is: ", arect + " square units")
+        document.write("<br><br>Area of Triangle is: ", atri + " square units")
+    </script>
+
+
+    <br><br>
+    <h4>Program to find perimeter of rectangle, square, circle, triangle</h4>
+    <script>
+
+        side = 4;
+        rad = 6;
+        pi = 3.14;
+        len = 8;
+        brd = 4;
+        base = 5;
+        ht = 7;
+        ht2 = 9;
+
+        psqr = 4 * side;
+        pcircle = 2 * pi * rad;
+        prect = 2 * (len + brd);
+        ptri = base + ht + ht2;
+
+        document.write("Perimeter of Square is: ", psqr + " units")
+        document.write("<br><br>Perimeter of Circle is: ", pcircle + " units")
+        document.write("<br><br>Perimeter of Rectangle is: ", prect + " units")
+        document.write("<br><br>Perimeter of Triangle is: ", ptri + " units")
+    </script>
+    
+    <h3>Program to find simple interest & compound interest</h3>
+    <script>
+        {
+            let p = 50000;
+            let t = 10;
+            let r = 3;
+
+            document.write("Values of ",`P , T & R : ${p}, ${t} & ${r}`);
+            let y = (p * t * r) / 100;
+            document.write(`<br><br> Simple Interest  : ${y}`);
+
+            let A = p * Math.pow((1 + r / 100), t);
+            let CI = A - p;
+            document.write(`<br><br> Compound interest  : ${CI}`);
+        } 
+    </script>
+
+    <br><br>
+    <h4>Program to find largest among two numbers</h4>
+    <script>
+        let num1, num2;
+        num1 = 45;
+        num2 = 78;
+        document.write("The two numbers are ", num1, " and ", num2)
+
+        if (num1 > num2) {
+            document.write("The greatest number is: ", num1)
+        }
+        else {
+            document.write("<br><br> The greatest number is: ", num2)
+        } 
+    </script>
+
+    <br><br>
+    <h4>Program to find smallest among three numbers</h3>
+        <script>
+            let x, y, z;
+            x = 68;
+            y = 5;
+            z = 10;
+
+            document.write("The three numbers are: ", x + " and " + y + " and " + z)
+            if (x < y && x < z) {
+                document.write("<br><br> Smallest number is: ", x)
+            }
+            else if (y < x && y < z) {
+                document.write("<br><br> Smallest number is: ", y)
+            }
+            else {
+                document.write("<br><br> Smallest number is: ", z)
+            }
+        </script>
+
+        <br><br>
+        <h4>Program to check the given number is zero,positive and negative</h4>
+        <script>
+            let m;
+            m = -10;
+
+            if(m == 0){
+                document.write("The given number is zero")
+            }
+            else if(m > 0){
+                document.write("The given number is positive")
+            }
+            else{
+                document.write("The given number is negative")
+            }
+        </script>
+
+
+
+</body>
+
+</html>

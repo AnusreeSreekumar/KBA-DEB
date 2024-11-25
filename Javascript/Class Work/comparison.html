@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison</title>
+</head>
+<body>
+    <script>
+        let x, y;
+        x=5;
+        y=10;
+        z=(x<y && y>x)
+        m=(x>y || y<x)
+        let p=!z
+        document.write("<br> The value of z is: ",z)
+        document.write("<br> The value of m is: ",m)
+        document.write("<br> The value of p is: ",p)
+        document.write("<br> Type of p is: ",typeof p)
+        if (x==y){
+            document.write("<br>Values are same <br><br>")
+        }
+        else if(x>y){
+            document.write("<br>Value of x is greater than y <br><br>")
+        }
+        else{
+            document.write("<br>Value of y is greater than x <br><br>")
+        }
+
+
+        // if(x===y){
+        //     document.write("Both variables are of same type <br><br>")
+        // }
+
+    </script>
+</body>
+</html>

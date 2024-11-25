@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    
+    <script>
+
+        let a = [1,2,3,4,5,6,7,8]
+
+        for(x in a){
+            if(a[x]%2 == 0){
+                document.write(a[x]," ")
+            }
+        }
+
+        //MATRIX 2d Array
+
+        let b = [[]];
+        b = [[1,2,3],[4,5,6],[7,8,9]];
+
+        document.write("<br><br> 2d array is:")
+        for(i = 0; i < 3; i++){
+             document.write("<br>")
+            for(j = 0; j < 3; j++){
+                document.write(b[i][j],"&nbsp ")
+            }
+        }
+
+        //To enter values into a 2d array
+
+        //To enter '1' in the matrix:
+
+        let arr1 = [[],[],[]];
+
+        for(i = 0; i < 3; i++){
+            for(j =0; j < 3; j++){
+                arr1[i][j] = 1;
+            }
+        }
+
+        document.write("<br><br>Array 1")
+
+        for(i = 0; i < 3; i++){
+             document.write("<br>")
+            for(j = 0; j < 3; j++){
+                document.write(arr1[i][j],"&nbsp ")
+            }
+        }
+
+        let arr2 = [[],[],[],[],[]];
+
+        for(i=0;i<3;i++){
+            for(j=0;j<4;j++){
+                arr2[i][j] = i+1;
+            }
+        }
+
+        document.write("<br><br> Array 2: ")
+
+        for(i = 0; i < 3; i++){
+             document.write("<br>")
+            for(j = 0; j < 4; j++){
+                document.write(arr2[i][j],"&nbsp ")
+            }
+        }
+
+        document.write("<br><br> Array 3: ")
+
+        let arr3 = [[],[],[],[]]
+        let n = 0;
+
+        for(i=0;i<3;i++){
+            document.write("<br>")
+            for(j = 0; j < 4; j++){
+                document.write(arr3[i][j] =n+2,"&nbsp &nbsp")
+                n = n+2;
+            }
+        } 
+
+        document.write("<br><br> Sum of 2nd and 3rd arrays:")
+
+        let sum = [[],[],[],[]]
+
+        for(i=0;i<3;i++){
+            document.write("<br>")
+            for(j = 0; j < 4; j++){
+                sum[i][j] = arr2[i][j] + arr3[i][j]
+                document.write(sum[i][j]," &nbsp ")
+            }
+        }
+
+        document.write("<br><br> Transpose of above array:")
+
+        let trans = [[],[],[],[]]
+
+        for(i=0;i<=4;i++){
+            document.write("<br>")
+            for(j=0;j<3;j++){
+                trans[i][j] = sum[j][i]
+                document.write(trans[i][j]," &nbsp ")
+            }
+        }
+    </script>
+</body>
+</html>

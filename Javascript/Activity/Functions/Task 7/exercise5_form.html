@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+
+<body>
+
+    <h3>Sum of 2 numbers using Form</h3>
+
+    <form id="sum">
+        <label for="dataInput">Enter first number</label>
+        <input type="number" name="1st number" id="dataInput">
+        <label for="dataInput2">Enter second number</label>
+        <input type="number" name="2nd number" id="dataInput2">
+        <button type="button" onclick="performCalculation()">Add</button>
+    </form>
+    <p id="outputMessage"></p>
+
+    <script>
+        function performCalculation() {
+            let sum = 0
+            const num1 = parseFloat(document.getElementById('dataInput').value);
+            // document.write("<br> first number",num1)
+            const num2 = parseFloat(document.getElementById('dataInput2').value);
+            // console.log(typeof num2)
+            if(isNaN(num1) || isNaN(num2)){
+                document.write("<br><br> Please enter a valid number")
+                return;
+            }
+            else{
+                sum = num1 + num2;
+            }
+
+            const messageElement = document.getElementById('outputMessage');
+            messageElement.textContent = `Sum of 2 nos is ${sum}`
+
+            document.write("<br><br> Sum is:\t", sum)
+
+            if(sum%2 == 0){
+                document.write("<br><br>Sum is an even number")
+            }
+            else{
+                document.write("<br><br> Sum is an odd number")
+            }
+        }
+
+    </script>
+</body>
+
+</html>

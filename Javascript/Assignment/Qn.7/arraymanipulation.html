@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manipulation</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+
+    <div id="container" class="flex flex-col justify-center items-center mt-20">
+        <div class="flex flex-col justify-center items-center">
+            <div>
+                <label for="value">Enter element</label>
+                <input type="text" name="arrayelement" id="value"
+                    class="w-40 h-8 border border-solid border-black rounded-xl ml-4">
+            </div>
+
+            <button onclick="storeArray()" class="mt-6 w-14 h-6 bg-gray-500 rounded-lg text-white">Save</button>
+        </div>
+
+        <div id="display" class="mt-8"></div>
+
+        <div class="mt-10">
+            Index:<select name="" id="index"></select>
+        </div>
+
+        <div id="sort" class="mt-6">
+            The array in sorted order is:
+        </div>
+
+        <div id="searchResult" class="mt-6">
+            Search: <input type="text" id="search" class="w-24 h-8 border border-solid border-black rounded-xl ml-4">
+            <button onclick="Search()" class="mt-6 w-16 h-6 bg-gray-500 rounded-lg text-white ml-6">Search</button>
+        </div>
+
+        <div id="Reverse" class="mt-6">
+            The reversed array is: 
+        </div>
+    </div>
+
+    <script>
+
+        const textArray = [];
+        let result = document.getElementById('display');
+
+        function storeArray() {
+
+            let element = document.getElementById('value').value;
+
+            if (element.trim() !== '') {
+                textArray.push(element);
+                document.getElementById('value').value = '';
+                textArray.forEach(element => {
+                    result.textContent = `The Entered array is: [${textArray}]`;
+                });
+                dropdownButton();
+                arraySort();
+                reverseArray();
+            }
+            else {
+                result.textContent = 'Please enter a valid value'
+            }
+
+        }
+
+        function dropdownButton() {
+
+            const dropdown = document.getElementById('index');
+            dropdown.innerHTML = "";
+            dropdown.onchange = displayArray;
+
+            textArray.forEach((_, index) => {
+                const option = document.createElement("option");
+                option.value = index;
+                option.textContent = `${index + 1}`;
+                dropdown.appendChild(option);
+            });
+
+        }
+
+        function displayArray() {
+            const display = document.getElementById('display');
+            if (textArray.length > 0) {
+                const value = document.getElementById('index').value;
+                const item = textArray[value];
+                display.textContent = item;
+            } else {
+                alert('No data is available');
+            }
+
+        }
+
+        function arraySort() {
+
+            const copy = textArray;
+            const sortedArray = copy.sort(function (a, b) { return a - b });
+            document.getElementById('sort').textContent = ` [ ${sortedArray} ]`
+        }
+
+        function Search() {
+
+            let searchText = document.getElementById('search').value;
+            
+            if (searchText.trim() !== '') {
+                for (let i = 0; i <= textArray.length; i++) {
+                    if (searchText === textArray[i]);
+                    document.getElementById('searchResult').textContent = `Search element found in position:${i}`;
+                }
+                
+            } 
+            else {
+                alert('please add Numbers!')
+            }
+        }
+
+        function reverseArray() {
+            const copy = textArray;
+            document.getElementById('Reverse').textContent = copy.reverse();
+        }
+
+
+    </script>
+</body>
+
+</html>

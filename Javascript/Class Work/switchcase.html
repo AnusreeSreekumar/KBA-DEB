@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+<body>
+   
+    <script>
+        let x = 10;
+        let y = 20;
+
+        let op = '+';
+
+        switch(op){
+
+            case '+':{
+                rslt = x+y;
+                document.write("Sum of two nos is: ", rslt)
+                break;
+            }
+
+            case '-':{
+                rslt = x-y;
+                document.write("Difference of two nos is: ", rslt)
+                break;
+            }
+
+            case '*':{
+                rslt = x*y;
+                document.write("Product of two nos is: ", rslt)
+                break;
+            }
+
+            case '/':{
+                rslt = x/y;
+                document.write("Division of two nos is: ", rslt)
+                break;
+            }
+
+            default:{
+                document.write("invalid input")
+                break;
+            }
+        }
+
+    </script>
+</body>
+</html>

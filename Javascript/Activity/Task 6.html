@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Operation</title>
+</head>
+
+<body>
+
+    <h3>Read two matrix and check whether they are same or not</h3>
+
+    <script>
+
+        let a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        let b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        let c = [[], [], []]; d = [[], [], []];
+
+        len_a = a.length;
+        len_b = b.length;
+
+        document.write("Matrix A is:")
+        for (i = 0; i < len_a; i++) {
+            document.write("<br>")
+            for (j = 0; j < len_a; j++) {
+                document.write(a[i][j], " ")
+
+            }
+        }
+        document.write("<br><br>Matrix B is:")
+        for (i = 0; i < len_b; i++) {
+            document.write("<br>")
+            for (j = 0; j < len_b; j++) {
+                document.write(b[i][j], " ")
+
+            }
+        }
+
+        let m = 0; n = 0;
+        if (len_a == len_b) { //if both matrix have same length
+
+            for (i = 0; i < len_a; i++) {
+                for (j = 0; j < len_b; j++) {
+                    if (a[i][j] != b[i][j]) { //Both matrix have same values
+                        m = m+1;
+                        break;
+                    }
+                }
+            }
+            if (m > 0) {
+                document.write("<br><br> A & B are different")
+            }
+            else {
+                document.write("<br><br>Matrix A & B are identical")
+            }
+        }
+        else { // When 2 matrix are different in size
+            document.write("<br><br> Two matrixes are different length")
+        }
+
+    </script>
+</body>
+
+</html>

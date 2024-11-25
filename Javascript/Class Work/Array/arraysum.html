@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of elements in 2 Arrays</title>
+</head>
+
+<body>
+
+    <h3>Sum of 2 arrays</h3>
+    <script>
+
+        let a = [2, 4, 6, 8]
+        let b = [1, 3, 5, 7]
+        let c = []
+        let sum = 0
+
+        document.write("The two arrays are:" + "<br>a is:\t\t" + a + "<br>b is:\t\t" + b + "<br><br>")
+        if (a.length == b.length) {
+
+            // for (i = 0; i < a.length; i++) { //using normal 'For' Loop
+            //     c[i] = a[i] + b[i]
+            // }
+            for(i in a,b){                  // using For-in Loop
+                c[i] = a[i] + b[i]
+            }
+
+            document.write("<br> New Array is:\t\t")
+            document.write("[",c,"]")
+        }
+
+        for (x of c) {
+            sum = sum + x;
+        }
+
+        document.write("<br><br> Sum of the values are:\t\t")
+        document.write(sum)
+
+        // else{
+        //     document.write("<br><br> The arrays are not of same length")
+        // }
+
+    </script>
+</body>
+
+</html>
